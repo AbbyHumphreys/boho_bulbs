@@ -1,0 +1,57 @@
+/*----------------------------------------------------- Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+/*----------------------------------------------------- General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/*----------------------------------------------------- Colors */
+
+.bg-color-1 {
+    background-color: #8f967d;
+}
+
+.bg-color-2 {
+    background-color: #000;
+}
+
+.txt-color-1 {
+    color: #fff;
+}
+
+/*----------------------------------------------------- Header Section */
+
+.sales-links a, .brand-section a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+}
+
+.sales-links {
+    background-color: #8f967d;
+    font-size: 0.9rem;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

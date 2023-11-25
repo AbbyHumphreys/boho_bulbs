@@ -20,28 +20,30 @@
 </head>
   <body>
     <div class="container-fluid">
-        <section class="header">
+        <section class="header uppercase">
             <div class="row sales-header">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12">
-                            <div class="row">
-                                <div class="col-4">
+                            <div class="row sales-links p-1">
+                                <div class="col-4 d-none d-lg-block">
                                     <a href="#">0300 010 2234</a>
                                 </div>
-                                <div class="col-4 text-center">
+                                <div class="col-12 col-lg-4 text-center">
                                     <a href="#">sale - 20% off</a>
                                 </div>
-                                <div class="col-4 d-inline-flex justify-content-end">
-                                    <a class="pe-2" href="#">contact</a>
+                                <div class="col-4 d-none d-lg-inline-flex justify-content-end ">
+                                    <a class="me-3" href="#">contact</a>
                                     {% if request.user.is_authenticated %}
                                         {% if request.user.is_superuser %}
                                             <a href="#">Product Management</a>
                                         {% endif %}
-                                        <a href="#">My Profile</a>
+                                        <a class="me-1" href="#">My Profile</a>
+                                        <p class="me-1 mb-0">/</p>
                                         <a href="{% url 'account_logout' %}">Logout</a>
                                     {% else %}
-                                        <a href="{% url 'account_login' %}">Login</a>
+                                        <a class="me-1" href="{% url 'account_login' %}">Login</a>
+                                        <p class="me-1 mb-0">/</p>
                                         <a href="{% url 'account_signup' %}">Register</a>
                                     {% endif %}
                                 </div>
@@ -50,19 +52,19 @@
                     </div>
                 </div>
             </div>
-            <div class="row brand">
+            <div class="row brand-section mt-2 mb-2">
                 <div class="col-4">
-                    <nav class="navbar bg-body-tertiary">
+                    <nav class="navbar">
                         <div class="container-fluid">
                           <form class="d-flex" role="search" method="GET" action="">
-                            <input class="form-control me-2" type="search"  name="q" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input class="form-control uppercase rounded-0" type="search"  name="q" placeholder="Search" aria-label="Search">
+                            <button class="btn bg-color-2 txt-color-1 rounded-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                           </form>
                         </div>
-                      </nav>
+                    </nav>
                 </div>
-                <div class="col-4 text-center">
-                    <h1><a href="{% url 'home' %}">Boho Bulbs</a></h1>
+                <div class="col-4 text-center logo-section">
+                    <h1 class="mb-0"><a class="align-middle" href="{% url 'home' %}">Boho Bulbs</a></h1>
                 </div>
                 <div class="col-4">
                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}" href="#">
@@ -79,6 +81,7 @@
                     </a>
                 </div>
             </div>
+                <hr class="m-0">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
