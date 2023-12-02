@@ -2,23 +2,26 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
     {% block extra_meta %}
     {% endblock %}
     <title>Boho Bulbs {% block extra_title %}{% endblock %}</title>
     {% block corecss %}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
     {% block extra_css %}
     {% endblock %}
 </head>
-  <body>
+
+<body>
     <div class="container-fluid">
         <section class="header uppercase">
             <div class="row sales-header">
@@ -53,20 +56,23 @@
                 </div>
             </div>
             <div class="row brand-section mt-2 mb-2">
-                <div class="col-12 col-lg-4">
+                <div class="col-4 d-none d-lg-block">
                     <nav class="navbar">
                         <div class="container-fluid">
-                          <form class="d-flex" role="search" method="GET" action="">
-                            <input class="form-control uppercase rounded-0" type="search"  name="q" placeholder="Search" aria-label="Search">
-                            <button class="btn bg-color-2 txt-color-1 rounded-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                          </form>
+                            <form class="d-flex" role="search" method="GET" action="">
+                                <input class="form-control uppercase rounded-0" type="search" name="q"
+                                    placeholder="Search" aria-label="Search">
+                                <button class="btn bg-color-2 txt-color-1 rounded-0" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
                         </div>
                     </nav>
                 </div>
-                <div class="col-4 text-center logo-section">
+                <div class="col-12 col-lg-4 text-center logo-section">
                     <h1 class="mb-0"><a class="align-middle" href="{% url 'home' %}">Boho Bulbs</a></h1>
                 </div>
-                <div class="col-4">
+                <div class="col-4 d-none d-lg-block">
                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}" href="#">
                         <div class="text-end">
                             <div class="div"><i class="fa-solid fa-basket-shopping"></i></div>
@@ -81,23 +87,26 @@
                     </a>
                 </div>
             </div>
-                <hr class="m-0">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    {% include 'includes/main-nav.html' %}
-                </div>
-            </nav>
+            <hr class="m-0">
+            <div>
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        {% include 'includes/mobile-top-header.html' %}
+                        {% include 'includes/main-nav.html' %}
+                    </div>
+                </nav>
+            </div>
             </header>
         </section>
     </div>
 
     {% if messages %}
-        <div class="message-container"></div>
+    <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}
@@ -107,11 +116,16 @@
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/2d6908b6f2.js" crossorigin="anonymous"></script>
-        {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/2d6908b6f2.js" crossorigin="anonymous"></script>
+    {% endblock %}
     {% block extra_js %}
     {% endblock %}
 </body>
+
 </html>
