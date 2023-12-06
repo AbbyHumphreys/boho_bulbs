@@ -1,0 +1,398 @@
+[
+  {
+    "pk": 1,
+    "model": "products.brand",
+    "fields": {
+      "name": "antler",
+      "description": "",
+      "friendly_name": "antler"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.brand",
+    "fields": {
+      "name": "blyton",
+      "description": "",
+      "friendly_name": "blyton"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.brand",
+    "fields": {
+      "name": "middlefield",
+      "description": "",
+      "friendly_name": "middlefield"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.brand",
+    "fields": {
+      "name": "clipper",
+      "description": "",
+      "friendly_name": "clipper"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.brand",
+    "fields": {
+      "name": "regency",
+      "description": "",
+      "friendly_name": "regency"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.brand",
+    "fields": {
+      "name": "crescent",
+      "description": "",
+      "friendly_name": "crescent"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.brand",
+    "fields": {
+      "name": "fisherman",
+      "description": "",
+      "friendly_name": "fisherman"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.brand",
+    "fields": {
+      "name": "hannover",
+      "description": "",
+      "friendly_name": "hannover"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.brand",
+    "fields": {
+      "name": "hicks",
+      "description": "",
+      "friendly_name": "hicks"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.brand",
+    "fields": {
+      "name": "cargo",
+      "description": "",
+      "friendly_name": "cargo"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.brand",
+    "fields": {
+      "name": "cage",
+      "description": "",
+      "friendly_name": "cage"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "products.brand",
+    "fields": {
+      "name": "factory",
+      "description": "",
+      "friendly_name": "factory"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "products.brand",
+    "fields": {
+      "name": "industrial",
+      "description": "",
+      "friendly_name": "industrial"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "products.brand",
+    "fields": {
+      "name": "stirling",
+      "description": "",
+      "friendly_name": "stirling"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.brand",
+    "fields": {
+      "name": "windsor",
+      "description": "",
+      "friendly_name": "windsor"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "products.brand",
+    "fields": {
+      "name": "wyatt",
+      "description": "",
+      "friendly_name": "wyatt"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "products.brand",
+    "fields": {
+      "name": "terrace",
+      "description": "",
+      "friendly_name": "terrace"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "products.brand",
+    "fields": {
+      "name": "lumiere",
+      "description": "",
+      "friendly_name": "lumiere"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "products.brand",
+    "fields": {
+      "name": "quincy",
+      "description": "",
+      "friendly_name": "quincy"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "products.brand",
+    "fields": {
+      "name": "lyndon",
+      "description": "",
+      "friendly_name": "lyndon"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "products.brand",
+    "fields": {
+      "name": "caged",
+      "description": "",
+      "friendly_name": "caged"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "products.brand",
+    "fields": {
+      "name": "allier",
+      "description": "",
+      "friendly_name": "allier"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "products.brand",
+    "fields": {
+      "name": "rustica",
+      "description": "",
+      "friendly_name": "rustica"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "products.brand",
+    "fields": {
+      "name": "ahrendale",
+      "description": "",
+      "friendly_name": "ahrendale"
+    }
+  },
+  {
+    "pk": 25,
+    "model": "products.brand",
+    "fields": {
+      "name": "aldora",
+      "description": "",
+      "friendly_name": "aldora"
+    }
+  },
+  {
+    "pk": 26,
+    "model": "products.brand",
+    "fields": {
+      "name": "badger",
+      "description": "",
+      "friendly_name": "badger"
+    }
+  },
+  {
+    "pk": 27,
+    "model": "products.brand",
+    "fields": {
+      "name": "oblong",
+      "description": "",
+      "friendly_name": "oblong"
+    }
+  },
+  {
+    "pk": 28,
+    "model": "products.brand",
+    "fields": {
+      "name": "cartwheel",
+      "description": "",
+      "friendly_name": "cartwheel"
+    }
+  },
+  {
+    "pk": 29,
+    "model": "products.brand",
+    "fields": {
+      "name": "marrakech",
+      "description": "",
+      "friendly_name": "marrakech"
+    }
+  },
+  {
+    "pk": 30,
+    "model": "products.brand",
+    "fields": {
+      "name": "orb",
+      "description": "",
+      "friendly_name": "orb"
+    }
+  },
+  {
+    "pk": 31,
+    "model": "products.brand",
+    "fields": {
+      "name": "saddler",
+      "description": "",
+      "friendly_name": "saddler"
+    }
+  },
+  {
+    "pk": 32,
+    "model": "products.brand",
+    "fields": {
+      "name": "holden",
+      "description": "",
+      "friendly_name": "holden"
+    }
+  },
+  {
+    "pk": 33,
+    "model": "products.brand",
+    "fields": {
+      "name": "bailey",
+      "description": "",
+      "friendly_name": "bailey"
+    }
+  },
+  {
+    "pk": 34,
+    "model": "products.brand",
+    "fields": {
+      "name": "trent",
+      "description": "",
+      "friendly_name": "trent"
+    }
+  },
+  {
+    "pk": 35,
+    "model": "products.brand",
+    "fields": {
+      "name": "capri",
+      "description": "",
+      "friendly_name": "capri"
+    }
+  },
+  {
+    "pk": 36,
+    "model": "products.brand",
+    "fields": {
+      "name": "cortland",
+      "description": "",
+      "friendly_name": "cortland"
+    }
+  },
+  {
+    "pk": 37,
+    "model": "products.brand",
+    "fields": {
+      "name": "abby",
+      "description": "",
+      "friendly_name": "abby"
+    }
+  },
+  {
+    "pk": 38,
+    "model": "products.brand",
+    "fields": {
+      "name": "bingham",
+      "description": "",
+      "friendly_name": "bingham"
+    }
+  },
+  {
+    "pk": 39,
+    "model": "products.brand",
+    "fields": {
+      "name": "oregon",
+      "description": "",
+      "friendly_name": "oregon"
+    }
+  },
+  {
+    "pk": 40,
+    "model": "products.brand",
+    "fields": {
+      "name": "ivan",
+      "description": "",
+      "friendly_name": "ivan"
+    }
+  },
+  {
+    "pk": 41,
+    "model": "products.brand",
+    "fields": {
+      "name": "aida",
+      "description": "",
+      "friendly_name": "aida"
+    }
+  },
+  {
+    "pk": 42,
+    "model": "products.brand",
+    "fields": {
+      "name": "carya",
+      "description": "",
+      "friendly_name": "carya"
+    }
+  },
+  {
+    "pk": 43,
+    "model": "products.brand",
+    "fields": {
+      "name": "canya",
+      "description": "",
+      "friendly_name": "canya"
+    }
+  },
+  {
+    "pk": 44,
+    "model": "products.brand",
+    "fields": {
+      "name": "kyle",
+      "description": "",
+      "friendly_name": "kyle"
+    }
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "pk": 1,
+    "model": "products.colour",
+    "fields": {
+      "name": "bronze",
+      "friendly_name": "bronze"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.colour",
+    "fields": {
+      "name": "cream",
+      "friendly_name": "cream"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.colour",
+    "fields": {
+      "name": "brown",
+      "friendly_name": "brown"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.colour",
+    "fields": {
+      "name": "grey",
+      "friendly_name": "grey"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.colour",
+    "fields": {
+      "name": "copper",
+      "friendly_name": "copper"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.colour",
+    "fields": {
+      "name": "chrome",
+      "friendly_name": "chrome"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.colour",
+    "fields": {
+      "name": "brass",
+      "friendly_name": "brass"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.colour",
+    "fields": {
+      "name": "black",
+      "friendly_name": "black"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.colour",
+    "fields": {
+      "name": "gold",
+      "friendly_name": "gold"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.colour",
+    "fields": {
+      "name": "blue",
+      "friendly_name": "blue"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.colour",
+    "fields": {
+      "name": "red",
+      "friendly_name": "red"
+    }
+  }
+]

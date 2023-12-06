@@ -1,0 +1,26 @@
+[
+  {
+    "pk": 1,
+    "model": "products.ip_rating",
+    "fields": { 
+      "name": "ip44", 
+      "description": "IP44 protection indicates that a device is guarded against solid objects larger than 1mm and can handle water splashes from any direction. This makes it suitable for use in indoor and outdoor environments, as it offers reliable protection against small particles and moisture. However, it's important to keep in mind that IP44 is not completely waterproof, so it's best to avoid exposing the device to heavy rain or submersion in water.",
+      "friendly_name": "IP44"}
+  },
+  {
+    "pk": 2,
+    "model": "products.ip_rating",
+    "fields": { 
+      "name": "ip20",
+      "description": "IP20 protection provides a reliable defense against large solid objects, such as accidental contact from fingers or other particles. However, it does not offer any safeguard against liquids or moisture. So, if you're using a device with IP20 protection, it's best to keep it in dry environments.",
+      "friendly_name": "IP20"}
+  },
+  {
+    "pk": 3,
+    "model": "products.ip_rating",
+    "fields": { 
+      "name": "ip23", 
+      "description": "IP23 protection means that a device is protected against solid objects greater than 12.5mm (such as fingers) and is also resistant to water spraying at an angle up to 60 degrees from vertical. This level of protection helps safeguard the device from small particles and light splashes of water. While it is not fully waterproof, IP23 protection is suitable for use in environments where there may be occasional exposure to moisture or light rain.",
+      "friendly_name": "IP23" }
+  }
+]
