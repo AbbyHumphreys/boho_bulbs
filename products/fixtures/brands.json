@@ -4,7 +4,7 @@
     "model": "products.brand",
     "fields": {
       "name": "antler",
-      "description": "",
+      "description": "Antler is a London-based design studio that creates contemporary lighting collections, known for their award-winning designs.",
       "friendly_name": "antler"
     }
   },
@@ -13,7 +13,7 @@
     "model": "products.brand",
     "fields": {
       "name": "blyton",
-      "description": "",
+      "description": "Blyton is a lighting production company that specializes in creating elegant and timeless lighting fixtures for residential and commercial spaces.",
       "friendly_name": "blyton"
     }
   },
@@ -22,7 +22,7 @@
     "model": "products.brand",
     "fields": {
       "name": "middlefield",
-      "description": "",
+      "description": "Middlefield is a lighting production company known for their innovative designs that blend traditional and modern elements, creating unique and versatile lighting solutions.",
       "friendly_name": "middlefield"
     }
   },
@@ -31,7 +31,7 @@
     "model": "products.brand",
     "fields": {
       "name": "clipper",
-      "description": "",
+      "description": "Clipper is a lighting production company that focuses on creating minimalist and functional lighting fixtures, designed for simplicity and practicality.",
       "friendly_name": "clipper"
     }
   },
@@ -40,7 +40,7 @@
     "model": "products.brand",
     "fields": {
       "name": "regency",
-      "description": "",
+      "description": "Regency is a lighting production company that specializes in creating luxurious and opulent lighting fixtures, inspired by traditional and classic designs.",
       "friendly_name": "regency"
     }
   },
@@ -49,7 +49,7 @@
     "model": "products.brand",
     "fields": {
       "name": "crescent",
-      "description": "",
+      "description": "Crescent is a lighting production company known for their sleek and contemporary lighting fixtures that bring a touch of sophistication to any space.",
       "friendly_name": "crescent"
     }
   },
@@ -58,7 +58,7 @@
     "model": "products.brand",
     "fields": {
       "name": "fisherman",
-      "description": "",
+      "description": "Fisherman is a lighting production company that draws inspiration from nautical themes, creating lighting fixtures that have a rustic and maritime-inspired aesthetic.",
       "friendly_name": "fisherman"
     }
   },
@@ -67,7 +67,7 @@
     "model": "products.brand",
     "fields": {
       "name": "hannover",
-      "description": "",
+      "description": "Hannover is a lighting production company that combines traditional craftsmanship with modern design, creating lighting fixtures that are both timeless and innovative.",
       "friendly_name": "hannover"
     }
   },
@@ -76,7 +76,7 @@
     "model": "products.brand",
     "fields": {
       "name": "hicks",
-      "description": "",
+      "description": "Hicks is a lighting production company that focuses on creating unique and artistic lighting fixtures, with designs that are influenced by nature and organic forms.",
       "friendly_name": "hicks"
     }
   },
@@ -85,7 +85,7 @@
     "model": "products.brand",
     "fields": {
       "name": "cargo",
-      "description": "",
+      "description": "Cargo is a lighting production company that specializes in industrial-style lighting fixtures, known for their raw and rugged aesthetic.",
       "friendly_name": "cargo"
     }
   },
@@ -94,7 +94,7 @@
     "model": "products.brand",
     "fields": {
       "name": "cage",
-      "description": "",
+      "description": "Cage is a lighting brand that specializes in creating fixtures with a contemporary and industrial aesthetic for a unique and modern look.",
       "friendly_name": "cage"
     }
   },
@@ -103,7 +103,7 @@
     "model": "products.brand",
     "fields": {
       "name": "factory",
-      "description": "",
+      "description": "Factory is a lighting production company that draws inspiration from industrial settings, crafting fixtures with a raw and utilitarian design. The brand focuses on bringing an authentic factory-like atmosphere to residential and commercial spaces.",
       "friendly_name": "factory"
     }
   },
@@ -112,7 +112,7 @@
     "model": "products.brand",
     "fields": {
       "name": "industrial",
-      "description": "",
+      "description": "Industrial is a lighting brand that embraces the rugged charm of industrial design. Their fixtures combine functionality with a raw aesthetic, making a bold statement in any space while maintaining a sense of practicality.",
       "friendly_name": "industrial"
     }
   },
@@ -121,7 +121,7 @@
     "model": "products.brand",
     "fields": {
       "name": "stirling",
-      "description": "",
+      "description": "Stirling is a lighting production company known for its sophisticated and timeless fixtures. The brand's designs exude elegance and charm, making them suitable for a variety of interior styles, from classic to contemporary.",
       "friendly_name": "stirling"
     }
   },
@@ -130,7 +130,7 @@
     "model": "products.brand",
     "fields": {
       "name": "windsor",
-      "description": "",
+      "description": "Windsor specializes in crafting lighting fixtures with a touch of traditional luxury. The brand's creations are inspired by classic designs, bringing a sense of regality and opulence to residential and commercial interiors.",
       "friendly_name": "windsor"
     }
   },
@@ -139,7 +139,7 @@
     "model": "products.brand",
     "fields": {
       "name": "wyatt",
-      "description": "",
+      "description": "Wyatt is a lighting brand that focuses on artistic and unique designs. Their fixtures are characterized by creative forms and unconventional shapes, making them a perfect choice for those who appreciate distinctive and eye-catching lighting.",
       "friendly_name": "wyatt"
     }
   },
@@ -148,7 +148,7 @@
     "model": "products.brand",
     "fields": {
       "name": "terrace",
-      "description": "",
+      "description": "Terrace is a lighting production company that brings a sleek and modern aesthetic to outdoor spaces. Their fixtures are designed to enhance the ambiance of terraces and outdoor areas, providing both style and functionality.",
       "friendly_name": "terrace"
     }
   },
@@ -157,7 +157,7 @@
     "model": "products.brand",
     "fields": {
       "name": "lumiere",
-      "description": "",
+      "description": "Lumiere is a lighting brand that specializes in contemporary and chic fixtures. Their designs prioritize clean lines and a sophisticated aesthetic, creating lighting solutions that seamlessly blend with modern interior settings.",
       "friendly_name": "lumiere"
     }
   },
@@ -166,7 +166,7 @@
     "model": "products.brand",
     "fields": {
       "name": "quincy",
-      "description": "",
+      "description": "Quincy is a lighting production company known for its balance of classic and contemporary elements. The brand's fixtures exude a timeless charm, making them suitable for a wide range of interior design preferences.",
       "friendly_name": "quincy"
     }
   },
@@ -175,7 +175,7 @@
     "model": "products.brand",
     "fields": {
       "name": "lyndon",
-      "description": "",
+      "description": "Lyndon specializes in creating lighting fixtures that blend traditional craftsmanship with a modern touch. The brand's designs offer a harmonious balance between classic elegance and contemporary aesthetics.",
       "friendly_name": "lyndon"
     }
   },
@@ -184,7 +184,7 @@
     "model": "products.brand",
     "fields": {
       "name": "caged",
-      "description": "",
+      "description": "Caged is a lighting brand that embraces the industrial-chic trend, featuring fixtures with cage-like structures. Their designs add a touch of edgy sophistication to spaces, making a bold statement with a hint of vintage charm.",
       "friendly_name": "caged"
     }
   },
@@ -193,7 +193,7 @@
     "model": "products.brand",
     "fields": {
       "name": "allier",
-      "description": "",
+      "description": "Allier is a lighting production company that combines rustic and contemporary elements in their designs. The brand's fixtures are inspired by natural textures and materials, bringing a sense of warmth and authenticity to interiors.",
       "friendly_name": "allier"
     }
   },
@@ -202,7 +202,7 @@
     "model": "products.brand",
     "fields": {
       "name": "rustica",
-      "description": "",
+      "description": "Rustica specializes in rustic-inspired lighting fixtures. Their designs evoke a sense of vintage charm and rugged beauty, making them a perfect choice for spaces that embrace a cozy and nostalgic atmosphere.",
       "friendly_name": "rustica"
     }
   },
@@ -211,7 +211,7 @@
     "model": "products.brand",
     "fields": {
       "name": "ahrendale",
-      "description": "",
+      "description": "Ahrendale is a lighting brand that focuses on creating fixtures with a timeless and enduring appeal. The brand's designs draw inspiration from classic elements, offering fixtures that stand the test of time in terms of style and quality.",
       "friendly_name": "ahrendale"
     }
   },
@@ -220,7 +220,7 @@
     "model": "products.brand",
     "fields": {
       "name": "aldora",
-      "description": "",
+      "description": "Aldora is a lighting production company that combines artistic flair with functionality. The brand's fixtures feature unique and eye-catching designs, adding a touch of creativity and personality to any space.",
       "friendly_name": "aldora"
     }
   },
@@ -229,7 +229,7 @@
     "model": "products.brand",
     "fields": {
       "name": "badger",
-      "description": "",
+      "description": "Badger is a lighting brand that embraces a rugged and industrial aesthetic. Their fixtures are characterized by raw materials and a utilitarian design, making them a bold choice for spaces that value authenticity and simplicity.",
       "friendly_name": "badger"
     }
   },
@@ -238,7 +238,7 @@
     "model": "products.brand",
     "fields": {
       "name": "oblong",
-      "description": "",
+      "description": "Oblong specializes in creating fixtures with a distinct industrial feel. The brand's designs offer a rugged and etherel aesthetic, adding a touch of contemporary personality to the room.",
       "friendly_name": "oblong"
     }
   },
@@ -247,7 +247,7 @@
     "model": "products.brand",
     "fields": {
       "name": "cartwheel",
-      "description": "",
+      "description": "Cartwheel is a lighting production company that draws inspiration from traditional design. The brand's fixtures bring a sense of nostalgia and rustic charm, making them a unique and eye-catching addition to various spaces.",
       "friendly_name": "cartwheel"
     }
   },
@@ -256,7 +256,7 @@
     "model": "products.brand",
     "fields": {
       "name": "marrakech",
-      "description": "",
+      "description": "Marrakech is a lighting brand that incorporates exotic and intricate designs inspired by Moroccan aesthetics. Their fixtures add a touch of Bohemian flair and cultural richness to interiors, creating a captivating ambiance.",
       "friendly_name": "marrakech"
     }
   },
@@ -265,7 +265,7 @@
     "model": "products.brand",
     "fields": {
       "name": "orb",
-      "description": "",
+      "description": "Orb specializes in creating fixtures with spherical designs. The brand's fixtures offer a modern and celestial aesthetic, adding a sense of harmony and balance to interiors.",
       "friendly_name": "orb"
     }
   },
@@ -274,7 +274,7 @@
     "model": "products.brand",
     "fields": {
       "name": "saddler",
-      "description": "",
+      "description": "Saddler is a lighting production company that combines traditional craftsmanship with a touch of farmhouse style. The brand's fixtures exude a olden day charm, making them a timeless addition to various spaces.",
       "friendly_name": "saddler"
     }
   },
@@ -283,7 +283,7 @@
     "model": "products.brand",
     "fields": {
       "name": "holden",
-      "description": "",
+      "description": "Holden is a lighting brand known for its unique and innovative designs. The brand's fixtures feature contemporary elements and artistic flair, adding a touch of creativity and modernity to interiors.",
       "friendly_name": "holden"
     }
   },
@@ -292,7 +292,7 @@
     "model": "products.brand",
     "fields": {
       "name": "bailey",
-      "description": "",
+      "description": "Bailey is a lighting production company that focuses on creating fixtures with a balance of simplicity and sophistication. The brand's designs offer a versatile and timeless appeal, suitable for a wide range of interior styles.",
       "friendly_name": "bailey"
     }
   },
@@ -301,7 +301,7 @@
     "model": "products.brand",
     "fields": {
       "name": "trent",
-      "description": "",
+      "description": "Trent specializes in minimalist and functional lighting fixtures. The brand's designs prioritize simplicity and practicality, making them a perfect choice for spaces that value understated elegance.",
       "friendly_name": "trent"
     }
   },
@@ -310,7 +310,7 @@
     "model": "products.brand",
     "fields": {
       "name": "capri",
-      "description": "",
+      "description": "Capri is a lighting production company that brings a touch of Mediterranean charm to their fixtures. The brand's designs are inspired by the relaxed and breezy atmosphere of the Italian island, creating a warm and inviting ambiance.",
       "friendly_name": "capri"
     }
   },
@@ -319,7 +319,7 @@
     "model": "products.brand",
     "fields": {
       "name": "cortland",
-      "description": "",
+      "description": "Cortland is a lighting brand that combines classic and contemporary elements in their designs. The brand's fixtures offer a harmonious blend of sophistication and modernity, making them suitable for a variety of interior settings.",
       "friendly_name": "cortland"
     }
   },
@@ -328,7 +328,7 @@
     "model": "products.brand",
     "fields": {
       "name": "abby",
-      "description": "",
+      "description": "Abby is a lighting production company that focuses on creating fixtures with a feminine and elegant aesthetic. The brand's designs exude grace and charm, adding a touch of romantic sophistication to interiors.",
       "friendly_name": "abby"
     }
   },
@@ -337,7 +337,7 @@
     "model": "products.brand",
     "fields": {
       "name": "bingham",
-      "description": "",
+      "description": "Bingham is a lighting brand that draws inspiration from classic and vintage designs. Their fixtures bring a sense of timeless elegance and nostalgia, making them a perfect choice for spaces that appreciate traditional aesthetics.",
       "friendly_name": "bingham"
     }
   },
@@ -346,7 +346,7 @@
     "model": "products.brand",
     "fields": {
       "name": "oregon",
-      "description": "",
+      "description": "Oregon specializes in creating fixtures with a rustic and natural appeal. The brand's designs are inspired by the beauty of the Pacific Northwest, adding a touch of wilderness and authenticity to interiors.",
       "friendly_name": "oregon"
     }
   },
@@ -355,7 +355,7 @@
     "model": "products.brand",
     "fields": {
       "name": "ivan",
-      "description": "",
+      "description": "Ivan is a lighting production company that focuses on creating fixtures with a modern and industrial aesthetic. The brand's designs feature clean lines and utilitarian elements, making them a perfect fit for contemporary spaces.",
       "friendly_name": "ivan"
     }
   },
@@ -364,7 +364,7 @@
     "model": "products.brand",
     "fields": {
       "name": "aida",
-      "description": "",
+      "description": "Aida is a lighting brand that embraces artistic and sculptural designs. The brand's fixtures add a touch of creativity and visual interest to interiors, making them a statement piece in any space.",
       "friendly_name": "aida"
     }
   },
@@ -373,7 +373,7 @@
     "model": "products.brand",
     "fields": {
       "name": "carya",
-      "description": "",
+      "description": "Carya is a lighting production company that combines organic and natural elements in their designs. The brand's fixtures are inspired by the beauty of nature, bringing a sense of tranquility and serenity to interiors.",
       "friendly_name": "carya"
     }
   },
@@ -382,7 +382,7 @@
     "model": "products.brand",
     "fields": {
       "name": "canya",
-      "description": "",
+      "description": "Canya is a lighting brand that draws inspiration from cultural and ethnic motifs. Their fixtures incorporate intricate and captivating designs, adding a touch of global flair and artistic richness to interiors.",
       "friendly_name": "canya"
     }
   },
@@ -391,7 +391,7 @@
     "model": "products.brand",
     "fields": {
       "name": "kyle",
-      "description": "",
+      "description": "Kyle offers modern lighting solutions with a touch of timeless elegance. Their fixtures feature clean lines and contemporary designs, making them a versatile choice for a range of interior styles. Kyle brings sophistication and functionality together, creating lighting that effortlessly enhances any space.",
       "friendly_name": "kyle"
     }
   }

@@ -1,0 +1,47 @@
+[
+  {
+    "pk": 1,
+    "model": "products.lamptype",
+    "fields": {
+      "name": "ceiling",
+      "description": "The pendant light is an elegant way to infuse your home with a warm, ambient glow. Whether you're searching for a statement chandelier or a mid-century icon, our exclusive collection of industrial pendant lights promise to stand out in any room",
+      "friendly_name": "ceiling pendant"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.lamptype",
+    "fields": {
+      "name": "wall",
+      "description": "When thinking about lighting up your living space, don not forget the walls. Layers of light lend both depth and warmth to your living setting, and wall and ceiling lights help to highlight your home's very best features.",
+      "friendly_name": "wall lamp"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.lamptype",
+    "fields": {
+      "name": "table",
+      "description": "Shine a light on your everyday endeavours with one of our luxury table lamps. Available in a wide range of contemporary and classic styles, a modern table lamp provides your living spaces with pockets of light whenever and wherever you need it.",
+      "friendly_name": "table lamp"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.lamptype",
+    "fields": {
+      "name": "floor",
+      "description": "Embrace industrial style floor lamps to introduce style, stature and illumination.",
+      "friendly_name": "floor lamp"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.lamptype",
+    "fields": {
+      "name": "other",
+      "description": "Lighting is essential in interior design, often acting as the crowning jewel that elevates your interiors and makes them shine.",
+      "friendly_name": "other"
+    }
+  }
+]
