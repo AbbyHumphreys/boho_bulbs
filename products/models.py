@@ -2,6 +2,10 @@ from django.db import models
 
 
 class LampType(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Lamp types'
+
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=2500, null=True, blank=True)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -14,6 +18,10 @@ class LampType(models.Model):
 
 
 class IpRating(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'IP ratings'
+
     name = models.CharField(max_length=20)
     description = models.TextField(max_length=2500, null=True, blank=True)
     friendly_name = models.CharField(max_length=20, null=True, blank=True)
@@ -26,6 +34,10 @@ class IpRating(models.Model):
 
 
 class Colour(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Colours'
+
     name = models.CharField(max_length=50)
     friendly_name = models.CharField(max_length=50, null=True, blank=True)
 
@@ -37,6 +49,10 @@ class Colour(models.Model):
 
 
 class Brand(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Brands'
+
     name = models.CharField(max_length=254)
     description = models.TextField(max_length=2500, null=True, blank=True)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -49,6 +65,10 @@ class Brand(models.Model):
 
 
 class Product(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Products'
+
     lamptitle = models.CharField(max_length=254)
     brand = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL)
     colour = models.ForeignKey('Colour', null=True, blank=True, on_delete=models.SET_NULL)
