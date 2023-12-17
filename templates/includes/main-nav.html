@@ -16,10 +16,10 @@
               By Type
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Ceiling Lamps</a></li>
-              <li><a class="dropdown-item" href="#">Wall Lamps</a></li>
-              <li><a class="dropdown-item" href="#">Floor Lamps</a></li>
-              <li><a class="dropdown-item" href="#">Table Lamps</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?lamptype=ceiling">Ceiling Lamps</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?lamptype=wall">Wall Lamps</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?lamptype=floor">Floor Lamps</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?lamptype=table">Table Lamps</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -27,9 +27,9 @@
               By Finish
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Metal</a></li>
-              <li><a class="dropdown-item" href="#">Wooden</a></li>
-              <li><a class="dropdown-item" href="#">Coloured</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?colour=bronze,copper,chrome,gold">Metal</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?colour=brown">Wooden</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?colour=red,black,blue,grey,cream">Coloured</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
