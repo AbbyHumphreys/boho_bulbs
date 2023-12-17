@@ -1,10 +1,23 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
 from .models import Product
 
 def all_products(request):
     """ A view to show all products, including sorting and searching """
 
     products = Product.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You did not enter any search criteria")
+                return redirect(reverse('products'))
+            
+            queries = Q(lamptitle__icontains=query) | Q(description1__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'products': products,
