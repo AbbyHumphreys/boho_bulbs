@@ -1,5 +1,5 @@
 /*----------------------------------------------------- Imports */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400,700&display=swap');
 
 /*----------------------------------------------------- General */
 
@@ -38,13 +38,17 @@ h5 {
     color: #fff;
 }
 
+txt-color-2 {
+    color: #000;
+}
+
 /*----------------------------------------------------- Header Section */
 
 .sales-links a, .brand-section a {
     text-decoration: none;
     color: black;
     letter-spacing: 0.1rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .sales-links {
@@ -58,6 +62,18 @@ h5 {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+a {
+    color: #000
+}
+
+a:hover {
+    color: #8f967d;
+}
+
+a.product-label:hover {
+    color: #fff;
 }
 
 .accordion-button:not(.collapsed) {
