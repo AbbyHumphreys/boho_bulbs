@@ -1,7 +1,7 @@
 from django.shortcuts import render, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, LampType, Colour
+from .models import Product, LampType, Colour, Brand, IpRating
 
 def all_products(request):
     """ A view to show all products, including sorting and searching """
@@ -10,6 +10,8 @@ def all_products(request):
     query = None
     lamptype = None
     colour = None
+    brand = None
+    iprating = None
     sort = None
     direction = None
 
@@ -38,6 +40,16 @@ def all_products(request):
             products = products.filter(colour__name__in=colour)
             colour = Colour.objects.filter(name__in=colour)
 
+        if 'brand' in request.GET:
+            brand = request.GET['brand'].split(',')
+            products = products.filter(brand__name__in=brand)
+            brand = Brand.objects.filter(name__in=brand)
+        
+        if 'iprating' in request.GET:
+            iprating = request.GET['iprating'].split(',')
+            products = products.filter(iprating__name__in=iprating)
+            iprating = IpRating.objects.filter(name__in=iprating)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -53,7 +65,9 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_lamptype': lamptype,
-        'current_colour':colour,
+        'current_colour': colour,
+        'current_brand': brand,
+        'current_iprating': iprating,
         'current_sorting': current_sorting,
     }
 
