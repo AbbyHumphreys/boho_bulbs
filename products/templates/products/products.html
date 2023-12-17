@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row p-5">
+            {% for product in products %}
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <a href="#" class="card-anchor text-decoration-none">
+                        <div class="card border-0 h-100 d-flex align-items-stretch">
+                            <div class="card-body pb-0">
+                                <img src="{{ product.image.url }}" class="card-img-top image-card"
+                                alt="product.lamptitle">
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <h5 class="card-title">{{ product.lamptitle | title }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 bg-transparent">
+                                <div class="row mb-3 align-bottom">
+                                    <div class="col-6">
+                                        £{{ product.price }}
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <i class="fa-solid fa-circle me-3"></i>
+                                        {{ product.colour | capfirst }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
