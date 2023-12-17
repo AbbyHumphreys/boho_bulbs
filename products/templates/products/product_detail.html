@@ -25,15 +25,15 @@
             <h4>{{ product.lamptitle | title }}</h4>
             <p>£{{ product.price }}</p>
             <div class="bg-color-1 rounded-0 m-0 p-2 d-inline-flex mb-3">
-                <p class="m-0">{{ product.iprating | upper }} -
+                <p class="m-0"><a href="{% url 'products' %}?iprating={{ product.iprating.name }}" class="product-label">{{ product.iprating | upper }}</a> -
                     {% if product.iprating|lower == 'ip65' %}
-                    WATERPROOF LIGHTS
+                        WATERPROOF LIGHTS
                     {% elif product.iprating|lower == 'ip44' %}
-                    SPLASHPROOF
+                        SPLASHPROOF
                     {% elif product.iprating|lower == 'ip20' %}
-                    INDOOR
+                        INDOOR
                     {% else %}
-                    IP RATING UNKNOWN
+                        IP RATING UNKNOWN
                     {% endif %}
                 </p>
             </div>
