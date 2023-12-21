@@ -11,6 +11,111 @@
 
 {% block content %}
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-1">
+
+            </div>
+            <div class="col-2 p-0">
+                <div class="btn-group d-flex mb-0 pb-0">
+                    <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        TYPE
+                    </button>
+                    <ul class="dropdown-menu w-100 rounded-0 border border-1 m-0">
+                        {% for lamptype in current_lamptypes %}
+                            <li>
+                                <a class="dropdown-item" href="{% url 'products' %}?{% for key, value in request.GET.items %}{% if key != 'lamptype' %}{{ key }}={{ value|urlencode }}&{% endif %}{% endfor %}lamptype={{ lamptype.name|urlencode }}">
+                                    {{ lamptype.friendly_name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2 p-0">
+                <div class="btn-group d-flex mb-0 pb-0">
+                    <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
+                        COLOURS
+                    </button>
+                    <ul class="dropdown-menu w-100 rounded-0 border border-1 m-0">
+                        {% for colour in current_colours %}
+                            <li>
+                                <a class="colour-select" href="{% url 'products' %}?{% for key, value in request.GET.items %}{% if key != 'colour' %}{{ key }}={{ value }}&{% endif %}{% endfor %}colour={{ colour.name }}">
+                                    {{ colour.friendly_name | capfirst }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2 p-0">
+                <div class="btn-group d-flex mb-0 pb-0">
+                    <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
+                        IP RATING
+                    </button>
+                    <ul class="dropdown-menu w-100 rounded-0 border border-1 m-0">
+                        {% for iprating in current_ipratings %}
+                            <li class="ps-3">
+                                <a class="ip-select" href="{% url 'products' %}?{% for key, value in request.GET.items %}{% if key != 'iprating' %}{{ key }}={{ value|urlencode }}&{% endif %}{% endfor %}iprating={{ iprating.name }}">
+                                    {{  iprating.friendly_name | capfirst }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2 p-0">
+                <div class="btn-group d-flex mb-0 pb-0">
+                    <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
+                        BRAND
+                    </button>
+                    <ul class="dropdown-menu w-100 rounded-0 border border-1 m-0">
+                        {% for brand in current_brands %}
+                            <li class="ps-3">
+                                <a class="brand-select" href="{% url 'products' %}?{% for key, value in request.GET.items %}{% if key != 'brand' %}{{ key }}={{ value|urlencode }}&{% endif %}{% endfor %}brand={{ brand.name }}">
+                                    {{  brand.friendly_name | capfirst }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2 p-0">
+                <div class="btn-group d-flex mb-0 pb-0">
+                    <button type="button" class="btn dropdown-toggle border border-1 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
+                        SORT BY
+                    </button>
+                    <ul class="dropdown-menu w-100 rounded-0 border border-1 m-0">
+                      <li><a class="dropdown-item {% if current_sorting == 'price_asc' %} active {% endif %}" href="{% url 'products' %}?sort=price&direction=asc">Price, low to high</a></li>
+                      <li><a class="dropdown-item {% if current_sorting == 'price_desc' %} active {% endif %}" href="{% url 'products' %}?sort=price&direction=desc">Price, high to low</a></li>
+                      <li><a class="dropdown-item {% if current_sorting == 'lamptype_asc' %} active {% endif %}" href="{% url 'products' %}?sort=lamptype&direction=asc">Lamp Type, A-Z</a></li>
+                      <li><a class="dropdown-item {% if current_sorting == 'lamptype_desc' %} active {% endif %}" href="{% url 'products' %}?sort=lamptype&direction=desc">LampType, Z-A</a></li>
+                      <li><a class="dropdown-item {% if current_sorting == 'lamptype_desc' %} active {% endif %}" href="{% url 'products' %}?sort=brand&direction=asc">Brand, A-Z</a></li>
+                      <li><a class="dropdown-item {% if current_sorting == 'lamptype_desc' %} active {% endif %}" href="{% url 'products' %}?sort=brand&direction=desc">Brand, Z-A</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1">
+                
+            </div>
+        </div>
+        {% if current_colour or current_lamptype %}
+        <div class="row mt-3">
+            <div class="col-1"></div>
+            <div class="col-10">
+                
+                <p class="d-inline"><strong>Filtered By: </strong>
+                    {% for colour in current_colour %}
+                    <span class="badge bg-color-1 txt-color-2">{{ colour.friendly_name | capfirst }}</span></p>
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                    {% for type in current_lamptype %}
+                    <span class="badge bg-color-1 txt-color-2">{{ type.friendly_name | capfirst }}</span></p>
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+            </div>
+            <div class="col-1"></div>
+        </div>
+        {% endif %}
         <div class="row p-5">
             {% for product in products %}
                 <div class="col-md-6 col-lg-3 mb-3">
@@ -38,7 +143,7 @@
                                 </div>
                                 <div class="col-6 text-end">
                                     <i class="fa-solid fa-circle me-3"></i>
-                                    {{ product.colour | capfirst }}
+                                    <a href="{% url 'products' %}?colour={{ product.colour.name }}">{{ product.colour | capfirst }}</a>
                                 </div>
                             </div>
                             <div class="row mb-3 align-bottom">
