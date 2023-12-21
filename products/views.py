@@ -14,6 +14,10 @@ def all_products(request):
     iprating = None
     sort = None
     direction = None
+    unique_colours = Colour.objects.all()
+    unique_types = LampType.objects.all()
+    unique_ipratings = IpRating.objects.all()
+    unique_brands = Brand.objects.all()
 
     if request.GET:
 
@@ -65,9 +69,13 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_lamptype': lamptype,
+        'current_lamptypes': unique_types,
         'current_colour': colour,
+        'current_colours': unique_colours,
         'current_brand': brand,
+        'current_brands': unique_brands,
         'current_iprating': iprating,
+        'current_ipratings': unique_ipratings,
         'current_sorting': current_sorting,
     }
 
@@ -84,3 +92,4 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
