@@ -24,6 +24,10 @@ h5 {
     font-size: 0.9rem
 }
 
+h6 {
+    font-size: 0.5rem
+}
+
 /*----------------------------------------------------- Colors */
 
 .bg-color-1 {
@@ -38,7 +42,7 @@ h5 {
     color: #fff;
 }
 
-txt-color-2 {
+.txt-color-2 {
     color: #000;
 }
 
