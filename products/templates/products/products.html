@@ -4,7 +4,37 @@
 {% block page_header %}
     <div class="container-fluid header-container">
         <div class="row mb-3 ">
-            
+            {% if current_lamptype %}
+                {% for lamptype in current_lamptype %}
+            <!-- 
+                Use of variable in static tag thanks to
+                https://stackoverflow.com/questions/16655851/django-1-5-how-to-use-variables-inside-static-tag 
+            -->
+            <div class="col-6 p-0">
+                {% with '../media/hero-images/'|add:lamptype.name|add:'_lamps.jpg' as image_path %}
+                    <img src="{% static image_path %}" class="w-100" alt="{{ lamptype.friendly_name }}">
+                {% endwith %}
+            </div>
+            <div class="col-6 bg-color-1 d-flex flex-column align-items-center justify-content-center p-0">
+                
+                        <h3 class="text-uppercase pb-1">{{ lamptype.friendly_name }}s</h3>
+                        <p class="ms-5 me-0 ps-5 pe-5">{{ lamptype.description }}</p>
+                    {% endfor %}
+                    
+                {% else %}
+                <div class="col-6 p-0">
+                    <img src="{% static '../media/hero-images/all_lighting.jpg' %}" class="w-100" alt="lighting">
+            </div>
+            <div class="col-6 bg-color-1 d-flex flex-column align-items-center justify-content-center p-0">
+                    <h3 class="text-uppercase pb-1">All Lighting</h3>
+                        <p class="ms-5 me-5 ps-5 pe-5">
+                            Lighting plays a pivotal role in interior design, often serving as the standout feature that enhances your spaces.
+                            Boho Bulbs' diverse lighting collection includes a variety of types, sizes, and finishes. 
+                            Whether you're seeking traditional designs or contemporary rustic vibes, 
+                            Boho Bulbs ensures there's a lighting solution perfectly tailored to your interior's aesthetic.
+                        </p>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}
