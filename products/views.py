@@ -27,6 +27,10 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'brand':
+                sortkey = 'brand__name'
+            if sortkey == 'lamptype':
+                sortkey = 'lamptype__name'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -65,6 +69,19 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    sorting_name = {
+        'price_desc': 'Price, high to low',
+        'price_asc': 'Price, low to high',
+        'lamptype_desc': 'Lamp Type, A-Z',
+        'lamptype_asc': 'Lamp Type, Z-A',
+        'brand_asc': 'Brand, A-Z',
+        'brand_desc': 'Brand Type, Z-A',
+    }
+    
+    current_sorting_name = ''
+    if current_sorting in sorting_name:
+        current_sorting_name = sorting_name[current_sorting]
+
     context = {
         'products': products,
         'search_term': query,
@@ -77,6 +94,7 @@ def all_products(request):
         'current_iprating': iprating,
         'current_ipratings': unique_ipratings,
         'current_sorting': current_sorting,
+        'current_sorting_name': current_sorting_name,
     }
 
     return render(request, 'products/products.html', context)
