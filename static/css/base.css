@@ -28,6 +28,11 @@ h6 {
     font-size: 0.5rem
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /*----------------------------------------------------- Colors */
 
 .bg-color-1 {
