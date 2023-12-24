@@ -12,5 +12,44 @@
                 data-bs-dismiss="toast"
                 aria-label="Close"></button>
     </div>
-    <div class="toast-body">{{ message }}</div>
+    <div class="toast-body">
+        <div class="row">
+            <div class="col">
+                {{ message }}
+            </div>
+        </div>
+        {% if grand_total %}
+            <p>Your Bag ({{ product_count }})</p>
+            <div class="bag-notification-wrapper">
+                {% for item in bag_items %}
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="img-thumbnail rounded-0 border-0" src="{{ item.product.image.url }}" alt="{{ item.product.lamptitle }}">
+                        </div>
+                        <div class="col-9">
+                            <p><strong>{{ item.product.name }}</strong></p>
+                            <p>Qty: {{ item.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col">
+                    <strong><p>
+                        Total {% if free_delivery_delta > 0 %} (Exc. delivery) {% endif %}:
+                        <span class="float-right">£{{ total | floatformat:2 }}</span>
+                    </p></strong>
+                    {% if free_delivery_delta > 0 %}
+                    <p class="bg-warning">
+                        Spend <strong>£{{ free_delivery_delta }}</strong> more to get free delivery!
+                    </p>
+                    {% endif %}
+                    <a href="{% url 'view_bag' %}">
+                        <span class="text-uppercase"> Go to secure checkout</span>
+                        <i class="fa-solid fa-lock ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
 </div>
