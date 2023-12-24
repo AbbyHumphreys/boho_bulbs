@@ -105,9 +105,23 @@
         </section>
     </div>
 
-    {% if messages %}
-    <div class="message-container"></div>
-    {% endif %}
+    <div class="message-container">
+        {% if messages %}
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+        {% endif %}
+    </div>
 
     {% block page_header %}
     {% endblock %}
@@ -127,6 +141,15 @@
     <script src="https://kit.fontawesome.com/2d6908b6f2.js" crossorigin="anonymous"></script>
     {% endblock %}
     {% block postloadjs %}
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const toastElList = document.querySelectorAll('.toast')
+                const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, {
+                    autohide: false
+                  }))
+                toastList.forEach(toast => toast.show());
+            });
+        </script>
     {% endblock %}
 </body>
 
