@@ -10,7 +10,7 @@
 {% endblock %} {% block content %}
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-12">
       <h1 class="text-center">Shopping Bag</h1>
     </div>
@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-1"></div>
     {% if bag_items %}
-    <div class="col-7 border border-1">
+    <div class="col-7 p-3">
       <div class="table-responsive">
         <table class="table">
           <thead>
@@ -36,7 +36,7 @@
               <td>
                 <img
                   src="{{ item.product.image.url }}"
-                  class="img-fluid img-thumbnail rounded-0"
+                  class="img-fluid img-thumbnail border-0 rounded-0"
                   alt="{{ item.product.lamptitle }}"
                   style="max-width: 100px"
                 />
@@ -101,21 +101,6 @@
               </td>
             </tr>
             {% endfor %}
-            <tr>
-              <td colspan="5" class="text-end">
-                <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                <h6>Delivery £{{ delivery|floatformat:2 }}</h6>
-                <h4>
-                  <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
-                </h4>
-                {% if free_delivery_delta > 0 %}
-                <p class="text-danger">
-                  You could get free delivery by spending just
-                  <strong>£{{ free_delivery_delta }}</strong> more!
-                </p>
-                {% endif %}
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -130,8 +115,22 @@
         </div>
       </div>
     </div>
-    <div class="col-3 border border-1">
-      <h1>Stripe</h1>
+    <div class="col-3 bg-body-secondary text-center p-3">
+      <h5 class="mb-3"><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h5>
+      <h5 class="mb-3">Delivery £{{ delivery|floatformat:2 }}</h5>
+      <h4>
+        <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
+      </h4>
+      {% if free_delivery_delta > 0 %}
+      <p class="text-danger small">
+        You could get free delivery by spending just
+        <strong>£{{ free_delivery_delta }}</strong> more!
+      </p>
+      {% endif %}
+      <a class="text-center btn btn-primary rounded-0 " href="{% url 'checkout' %}">
+        <i class="fa-solid fa-lock pe-1"></i>
+        Secure Checkout
+      </a>
     </div>
     {% else %}
     <div class="col-10">
