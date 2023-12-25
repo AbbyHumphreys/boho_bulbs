@@ -21,7 +21,7 @@
     {% endblock %}
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <div class="container-fluid">
         <section class="header uppercase">
             <div class="row sales-header">
@@ -128,7 +128,6 @@
 
     {% block content %}
     {% endblock %}
-
     {% include 'includes/footer.html' %}
 
     {% block corejs %}
