@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-5 mb-5 text-center">
+            <div class="col-12">
+              <h1>Thank You!</h1>
+              <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            </div>
+          </div>
+        <div class="row text-center">
+            <div class="col-12">
+                <a href="{% url 'products' %}" class="btn btn-primary rounded-0 text-center">
+                    <span class="text-uppercase">View more products</span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
