@@ -51,6 +51,9 @@ form.addEventListener('submit', function(event) {
   card.update({ 'disabled': true});
   document.getElementById('submit-button').disabled = true;
 
+  toggleFade(document.getElementById('payment-form'));
+  toggleFade(document.getElementById('loading-overlay'));
+
   stripe.confirmCardPayment(clientSecret, {
       payment_method: {
           card: card,
@@ -59,6 +62,8 @@ form.addEventListener('submit', function(event) {
     if (result.error) {
       let errorElement = document.getElementById('card-errors');
       errorElement.textContent = result.error.message;
+      toggleFade(document.getElementById('payment-form'));
+      toggleFade(document.getElementById('loading-overlay'));
       card.update({ 'disabled': false});
       document.getElementById('submit-button').disabled = false;
     } else {
@@ -69,11 +74,13 @@ form.addEventListener('submit', function(event) {
         hiddenInput.setAttribute('name', 'stripeToken');
         hiddenInput.setAttribute('value', result.paymentIntent.id);
         form.appendChild(hiddenInput);
-
         form.submit();
       }
     }
-  });
+  }).catch(function(error) {
+    // Removes console error for promise
+    console.error("Error during payment:", error);
+});;
 });
 
 function stripeTokenHandler(token) {
@@ -89,4 +96,16 @@ function stripeTokenHandler(token) {
 
   // Submit the form
   form.submit();
+}
+
+function toggleFade(element) {
+  if (window.getComputedStyle(element).display === "none") {
+      element.style.display = "block";
+      // Fix: Ensure the element is rendered before changing opacity
+      setTimeout(() => { element.style.opacity = 1; }, 10);
+  } else {
+      element.style.opacity = 0;
+      // Wait for the transition to finish before hiding the element
+      setTimeout(() => { element.style.display = "none"; }, 1000);
+  }
 }
