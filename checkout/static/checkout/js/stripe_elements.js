@@ -1,4 +1,5 @@
 let stripePublicKey = document.getElementById('id_stripe_public_key').textContent.slice(1, -1);
+let clientSecret = document.getElementById('id_client_secret').textContent.slice(1, -1);
 
 let stripe = Stripe(stripePublicKey);
 
@@ -41,10 +42,12 @@ let stripe = Stripe(stripePublicKey);
 
 // Handle form submission.
 let form = document.getElementById('payment-form');
+
+
+let successElement = document.getElementById('stripe-token-handler');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  // Disable the card and the submit button
   card.update({ 'disabled': true});
   document.getElementById('submit-button').disabled = true;
 
@@ -52,24 +55,26 @@ form.addEventListener('submit', function(event) {
       payment_method: {
           card: card,
       }
-  })
-  stripe.createToken(card).then(function(result) {
+  }).then(function(result) {
     if (result.error) {
-      // Inform the user if there was an error.
       let errorElement = document.getElementById('card-errors');
       errorElement.textContent = result.error.message;
-      // Re-enable the card and the submit button
       card.update({ 'disabled': false});
       document.getElementById('submit-button').disabled = false;
     } else {
-        if (result.paymentIntent.status === 'succeeded') {
-            // Submit the form
-            form.submit();
-        }
-  }});
-});
+      if (result.paymentIntent.status === 'succeeded') {
+        // Insert the token ID into the form so it gets submitted to the server
+        let hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'stripeToken');
+        hiddenInput.setAttribute('value', result.paymentIntent.id);
+        form.appendChild(hiddenInput);
 
-let successElement = document.getElementById('stripe-token-handler');
+        form.submit();
+      }
+    }
+  });
+});
 
 function stripeTokenHandler(token) {
   successElement.className = '';
