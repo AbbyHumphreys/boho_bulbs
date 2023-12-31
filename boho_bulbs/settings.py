@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'crispy_forms',
-    "crispy_bootstrap5",
+    'crispy_bootstrap5',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
