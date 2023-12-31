@@ -38,7 +38,6 @@
 #payment-form .form-control,
 #card-element {
     color: #000;
-    border: 1px solid #000;
 }
 
 #loading-overlay {
@@ -58,4 +57,14 @@
   justify-content: center;
   margin: 0;
   height: 100%;
+}
+
+select,
+select option {
+  color: #000;
+}
+
+select:invalid,
+select option[value=""] {
+  color: #aab7c4;
 }
