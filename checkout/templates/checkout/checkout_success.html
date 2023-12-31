@@ -157,15 +157,22 @@
                     <p>£{{ order.grand_total }}</p>
                 </div>
             </div>
-        </div>
             <div class="col-2"></div>
         </div>
-        
         <div class="row text-center mb-5">
-            <div class="col-12">
-                <a href="{% url 'products' %}" class="btn btn-primary rounded-0 text-center">
-                    <span class="text-uppercase">View more products</span>
-                </a>
+            {% if from_profile %}
+                <div class="col-12">
+                    <a href="{% url 'profile' %}" class="btn btn-primary bg-color-1 border-0 rounded-0">
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                </div>
+            {% else %}
+                <div class="col-12">
+                    <a href="{% url 'products' %}" class="btn btn-primary bg-color-1 border-0 rounded-0">
+                        <span class="text-uppercase">View more products</span>
+                    </a>
+                </div>
+            {% endif %}
             </div>
         </div>
     </div>
