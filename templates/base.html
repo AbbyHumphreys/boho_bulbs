@@ -53,7 +53,7 @@
                                         {% if request.user.is_superuser %}
                                             <a href="#">Product Management</a>
                                         {% endif %}
-                                        <a class="me-1" href="#">My Profile</a>
+                                        <a class="me-1" href="{% url 'profile' %}">Account</a>
                                         <p class="me-1 mb-0">/</p>
                                         <a href="{% url 'account_logout' %}">Logout</a>
                                     {% else %}
