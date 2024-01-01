@@ -34,12 +34,21 @@
             {% for item in bag_items %}
             <tr>
               <td>
-                <img
-                  src="{{ item.product.image.url }}"
-                  class="img-fluid img-thumbnail border-0 rounded-0"
-                  alt="{{ item.product.lamptitle }}"
-                  style="max-width: 100px"
-                />
+                {% if item.product.image %}
+                  <img
+                    src="{{ item.product.image.url }}"
+                    class="img-fluid img-thumbnail border-0 rounded-0"
+                    alt="{{ item.product.lamptitle }}"
+                    style="max-width: 100px"
+                  />
+                {% else %}
+                  <img
+                    src="{{ MEDIA_URL }}noimage.png"
+                    class="img-fluid img-thumbnail border-0 rounded-0"
+                    alt="{{ item.product.lamptitle }}"
+                    style="max-width: 100px"
+                  />
+                {% endif %}
               </td>
               <td>
                 <p>{{ item.product.lamptitle }}</p>

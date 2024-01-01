@@ -180,7 +180,7 @@
                                     <img src="{{ product.image.url }}" class="card-img-top image-card"
                                     alt="product.lamptitle">
                                 {% else %}
-                                    <img src="#" class="card-img-top image-card"
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top image-card"
                                     alt="product.lamptitle">
                                 {% endif %}
                                 <div class="row mt-2">

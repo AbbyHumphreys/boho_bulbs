@@ -24,7 +24,11 @@
                 {% for item in bag_items %}
                     <div class="row">
                         <div class="col-3">
-                            <img class="img-thumbnail rounded-0 border-0" src="{{ item.product.image.url }}" alt="{{ item.product.lamptitle }}">
+                            {% if item.product.image %}
+                                <img class="img-thumbnail rounded-0 border-0" src="{{ item.product.image.url }}" alt="{{ item.product.lamptitle }}">
+                            {% else %}
+                                <img class="img-thumbnail rounded-0 border-0" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.lamptitle }}">
+                            {% endif %}
                         </div>
                         <div class="col-9">
                             <p><strong>{{ item.product.name }}</strong></p>
