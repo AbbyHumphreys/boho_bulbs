@@ -82,7 +82,7 @@ class Product(models.Model):
     wattage = models.IntegerField(null=True, blank=True)
     bulbtype = models.CharField(max_length=50, null=True, blank=True)
     iprating = models.ForeignKey('IpRating', null=True, blank=True, on_delete=models.SET_NULL)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(max_length=500, null=True, blank=True)
 
     def __str__(self):
         return self.lamptitle

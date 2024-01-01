@@ -1,0 +1,30 @@
+                     List of relations
+ Schema |             Name              | Type  |  Owner   
+--------+-------------------------------+-------+----------
+ public | account_emailaddress          | table | pddibxlu
+ public | account_emailconfirmation     | table | pddibxlu
+ public | auth_group                    | table | pddibxlu
+ public | auth_group_permissions        | table | pddibxlu
+ public | auth_permission               | table | pddibxlu
+ public | auth_user                     | table | pddibxlu
+ public | auth_user_groups              | table | pddibxlu
+ public | auth_user_user_permissions    | table | pddibxlu
+ public | checkout_order                | table | pddibxlu
+ public | checkout_orderlineitem        | table | pddibxlu
+ public | django_admin_log              | table | pddibxlu
+ public | django_content_type           | table | pddibxlu
+ public | django_migrations             | table | pddibxlu
+ public | django_session                | table | pddibxlu
+ public | django_site                   | table | pddibxlu
+ public | products_brand                | table | pddibxlu
+ public | products_colour               | table | pddibxlu
+ public | products_iprating             | table | pddibxlu
+ public | products_lamptype             | table | pddibxlu
+ public | products_product              | table | pddibxlu
+ public | profiles_userprofile          | table | pddibxlu
+ public | socialaccount_socialaccount   | table | pddibxlu
+ public | socialaccount_socialapp       | table | pddibxlu
+ public | socialaccount_socialapp_sites | table | pddibxlu
+ public | socialaccount_socialtoken     | table | pddibxlu
+(25 rows)
+
