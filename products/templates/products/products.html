@@ -201,12 +201,21 @@
                                 </div>
                             </div>
                             <div class="row mb-3 align-bottom">
-                                <div class="col ">
+                                <div class="col 6">
                                     {% if product.brand %}
                                     <a href="{% url 'products' %}?brand={{ product.brand.name }}" class="brand-anchor"><strong>{{ product.brand | upper }}</strong></a>
                                     {% endif %}
                                 </div>
+                                <div class="col-6 text-end">
+                                    {% if request.user.is_superuser %}
+                                        <small>
+                                            <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                        </small>
+                                    {% endif %}
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
