@@ -11,7 +11,7 @@
                 https://stackoverflow.com/questions/16655851/django-1-5-how-to-use-variables-inside-static-tag 
             -->
             <div class="col-6 p-0">
-                {% with '../media/hero-images/'|add:lamptype.name|add:'_lamps.jpg' as image_path %}
+                {% with '../media/'|add:lamptype.name|add:'_lamps.jpg' as image_path %}
                     <img src="{% static image_path %}" class="w-100" alt="{{ lamptype.friendly_name }}">
                 {% endwith %}
             </div>
