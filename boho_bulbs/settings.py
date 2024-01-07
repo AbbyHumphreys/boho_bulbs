@@ -29,7 +29,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+
+DEBGUG = True
 
 ALLOWED_HOSTS = [os.environ.get('LOCALHOST'), 'boho-bulbs-12038623272a.herokuapp.com']
 
