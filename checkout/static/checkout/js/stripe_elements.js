@@ -5,26 +5,8 @@ let stripe = Stripe(stripePublicKey);
 
 let elements = stripe.elements({clientSecret});
 
-// create some style for the card element
-let style = {
-  base: {
-    color: '#32325d',
-    lineHeight: '18px',
-    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-    fontSmoothing: 'antialiased',
-    fontSize: '16px',
-    '::placeholder': {
-      color: '#aab7c4'
-    }
-  },
-  invalid: {
-    color: '#fa755a',
-    iconColor: '#fa755a'
-  }
-};
- // Create an instance of the card Element
-let card = elements.create('card', {style: style});
-// Add an instance of the card Element into the `card-element` <div>.
+let card = elements.create('card');
+
 card.mount('#card-element');
 
 // Handle real-time validation errors from the card Element.
@@ -39,17 +21,10 @@ card.addEventListener('change', function(event) {
 
 let form = document.getElementById('payment-form');
 
-function cacheCheckoutData(csrfToken, clientSecret, saveInfo) {
-  return 
-}
-
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   card.update({ 'disabled': true});
   document.getElementById('submit-button').disabled = true;
-
-  toggleFade(document.getElementById('payment-form'));
-  toggleFade(document.getElementById('loading-overlay'));
 
   let csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
   let saveInfo = document.getElementById('id-save-info').checked;
