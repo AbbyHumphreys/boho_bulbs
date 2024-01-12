@@ -1,0 +1,15 @@
+{% if item.product.image %}
+    <img
+        src="{{ item.product.image.url }}"
+        class="img-fluid img-thumbnail border-0 rounded-0"
+        alt="{{ item.product.lamptitle }}"
+        style="max-width: 100px"
+    />
+{% else %}
+    <img
+        src="{{ MEDIA_URL }}noimage.png"
+        class="img-fluid img-thumbnail border-0 rounded-0"
+        alt="{{ item.product.lamptitle }}"
+        style="max-width: 100px"
+    />
+{% endif %}

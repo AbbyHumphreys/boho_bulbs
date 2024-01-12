@@ -1,198 +1,148 @@
 {% extends "base.html" %} 
 {% load static %} 
-{% load bag_tools %}
+{% load bag_tools %} 
 {% block page_header %}
+
 <div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
-{% endblock %} {% block content %}
+{% endblock %} 
+{% block content %}
 
 <div class="container-fluid">
-  <div class="row mb-5">
-    <div class="col-12">
-      <h1 class="text-center">Shopping Bag</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-1"></div>
-    {% if bag_items %}
-    <div class="col-7 p-3">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Product Info</th>
-              <th scope="col"></th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in bag_items %}
-            <tr>
-              <td>
-                {% if item.product.image %}
-                  <img
-                    src="{{ item.product.image.url }}"
-                    class="img-fluid img-thumbnail border-0 rounded-0"
-                    alt="{{ item.product.lamptitle }}"
-                    style="max-width: 100px"
-                  />
-                {% else %}
-                  <img
-                    src="{{ MEDIA_URL }}noimage.png"
-                    class="img-fluid img-thumbnail border-0 rounded-0"
-                    alt="{{ item.product.lamptitle }}"
-                    style="max-width: 100px"
-                  />
-                {% endif %}
-              </td>
-              <td>
-                <p>{{ item.product.lamptitle }}</p>
-                <p>{{ item.product.sku | upper }}</p>
-              </td>
-              <td>
-                <p>£{{ item.product.price }}</p>
-              </td>
-              <td>
-                <form
-                  class="form quantity_form"
-                  method="POST"
-                  action="{% url 'adjust_bag' item.item_id %}"
-                >
-                  {% csrf_token %}
-                  <div class="input-group input-group-sm">
-                    <button
-                      class="input-group-text decrement-qty rounded-0"
-                      data-item_id="{{ item.item_id }}"
-                      id="decrement-qty_{{ item.item_id }}"
-                    >
-                      <i class="fa-solid fa-minus fa-xs"></i>
-                    </button>
-                    <input
-                      type="number"
-                      class="form-control form-control-sm qty_input rounded-0"
-                      name="quantity"
-                      value="{{ item.quantity }}"
-                      min="1"
-                      max="99"
-                      data-item_id="{{ item.item_id }}"
-                      id="id_qty_{{ item.item_id }}"
-                    />
-                    <button
-                      class="input-group-text increment-qty rounded-0"
-                      data-item_id="{{ item.item_id }}"
-                      id="increment-qty_{{ item.item_id }}"
-                    >
-                      <i class="fa-solid fa-plus fa-xs"></i>
-                    </button>
-                  </div>
-                  <div class="row">
-                    <div class="col-6">
-                      <a class="text-info update-link"><small>Update</small></a>
-                    </div>
-                    <div class="col-6 text-end">
-                      <a
-                        class="text-danger remove-item"
-                        id="remove_{{ item.item_id }}"
-                        data-size="{{ item.size }}"
-                        ><small>Remove</small></a
-                      >
-                    </div>
-                  </div>
-                </form>
-              </td>
-              <td>
-                <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      <div class="row">
-        <div class="col-9"></div>
-        <div class="col-3">
-          <a
-            href="{% url 'products' %}"
-            class="btn btn-primary w-100 rounded-0 bg-color-1 border-0"
-            ><i class="fa-solid fa-chevron-left"></i> Keep Shopping</a
-          >
+    <div class="row mb-5">
+        <div class="col-12">
+            <h1 class="text-center">Shopping Bag</h1>
         </div>
-      </div>
     </div>
-    <div class="col-3 bg-body-secondary text-center p-3">
-      <h5 class="mb-3"><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h5>
-      <h5 class="mb-3">Delivery £{{ delivery|floatformat:2 }}</h5>
-      <h4>
-        <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
-      </h4>
-      {% if free_delivery_delta > 0 %}
-      <p class="text-danger small">
-        You could get free delivery by spending just
-        <strong>£{{ free_delivery_delta }}</strong> more!
-      </p>
-      {% endif %}
-      <a class="text-center btn btn-primary rounded-0 " href="{% url 'checkout' %}">
-        <i class="fa-solid fa-lock pe-1"></i>
-        Secure Checkout
-      </a>
+
+    <!-- Bag display for smaller screens -->
+    <div class="row d-md-none">
+        <div class="col-12 bg-body-secondary text-center">
+            {% include "bag/bag-total.html" %}
+        </div>
+        {% for item in bag_items %}
+        <div class="col-12">
+            {% include "bag/product-image.html" %}
+        </div>
+        <div class="col-12">
+            {% include "bag/product-info.html" %}
+        </div>
+        <div class="col-12">
+            {% include "bag/quantity-form.html" %}
+        </div>
+        <div class="col-12">
+            <p><strong>Price:</strong> £{{ item.product.price }}</p>
+            <p>
+                <strong>Subtotal:</strong> £{{ item.product.price | calc_subtotal:item.quantity }}
+            </p>
+        </div>
+        {% endfor %}
     </div>
-    {% else %}
-    <div class="col-10">
-      <h5 class="text-center pt-5 mt-5 mb-3">Your bag is currently empty</h5>
-      <a class="text-center" href="{% url 'products' %}">
-        <p>Keep Shopping</p>
-      </a>
+
+    <!-- Bag display for larger screens -->
+    <div class="row">
+        {% if bag_items %}
+        <div class="col-1 d-none d-md-inline"></div>
+        <div class="col-7 p-3 d-none d-md-inline">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in bag_items %}
+                        <tr>
+                            <td>
+                                {% include "bag/product-image.html" %}
+                            </td>
+                            <td>
+                                {% include "bag/product-info.html" %}
+                            </td>
+                            <td>
+                                <p>£{{ item.product.price }}</p>
+                            </td>
+                            <td>
+                                {% include "bag/quantity-form.html" %}
+                            </td>
+                            <td>
+                                <p>
+                                    £{{ item.product.price | calc_subtotal:item.quantity }}
+                                </p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-3 bg-body-secondary text-center p-3 d-none d-md-inline">
+            {% include "bag/bag-total.html" %}
+        </div>
+        <div class="col-1 d-none d-md-inline"></div>
+        {% else %}
+        <div class="col-1"></div>
+        <div class="col-10 d-none d-md-inline">
+            <h5 class="text-center pt-5 mt-5 mb-3">
+                Your bag is currently empty
+            </h5>
+            <a class="text-center" href="{% url 'products' %}">
+                <p>Keep Shopping</p>
+            </a>
+        </div>
+        <div class="col-1"></div>
+        {% endif %}
     </div>
-    {% endif %}
-    <div class="col-1"></div>
-  </div>
 </div>
 
 {% endblock %} 
 {% block postloadjs %} 
 {{ block.super }} 
 {% include 'products/includes/quantity_input_script.html' %}
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
+        // handles quantity adjustments
+        const updateLink = document.querySelectorAll(".update-link");
+        const quantityForm = document.getElementById("quantity_form");
+        updateLink.forEach((link) =>
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const form = link.closest(".quantity_form");
+                form.submit();
+            })
+        );
 
-    // handles quantity adjustments
-    const updateLink = document.querySelectorAll(".update-link");
-    const quantityForm = document.getElementById("quantity_form");
-    updateLink.forEach((link) =>
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const form = link.closest('.quantity_form');
-        form.submit();
-      })
-    );
+        // handles product item removal
+        const remove = document.querySelectorAll(".remove-item");
 
-    // handles product item removal
-    const remove = document.querySelectorAll(".remove-item");
+        remove.forEach((item) =>
+            item.addEventListener("click", (event) => {
+                const csrfToken = "{{ csrf_token }}";
+                const itemID = item.getAttribute("id").split("remove_")[1];
 
-    remove.forEach((item) =>
-      item.addEventListener("click", (event) => {
-        const csrfToken = "{{ csrf_token }}";
-        const itemID = item.getAttribute("id").split("remove_")[1];
-
-        fetch(`/bag/remove/${itemID}/`, {
-          method: "POST",
-          body: `csrfmiddlewaretoken=${csrfToken}`,
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "X-CSRFToken": csrfToken,
-          },
-        }).then((res) => {
-          if (res.status === 200) {
-            location.reload();
-          }
-        });
-      })
-    );
-  });
+                fetch(`/bag/remove/${itemID}/`, {
+                    method: "POST",
+                    body: `csrfmiddlewaretoken=${csrfToken}`,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "X-CSRFToken": csrfToken,
+                    },
+                }).then((res) => {
+                    if (res.status === 200) {
+                        location.reload();
+                    }
+                });
+            })
+        );
+    });
 </script>
 {% endblock %}

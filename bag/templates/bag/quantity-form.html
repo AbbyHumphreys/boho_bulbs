@@ -1,0 +1,46 @@
+<form
+    class="form quantity_form"
+    method="POST"
+    action="{% url 'adjust_bag' item.item_id %}"
+>
+    {% csrf_token %}
+    <div class="input-group input-group-sm">
+        <button
+            class="input-group-text decrease-qty rounded-0"
+            data-item_id="{{ item.item_id }}"
+            id="decrement-qty_{{ item.item_id }}"
+        >
+            <i class="fa-solid fa-minus fa-xs"></i>
+        </button>
+        <input
+            type="number"
+            class="form-control form-control-sm qty_input rounded-0"
+            name="quantity"
+            value="{{ item.quantity }}"
+            min="1"
+            max="99"
+            data-item_id="{{ item.item_id }}"
+            id="id_qty_{{ item.item_id }}"
+        />
+        <button
+            class="input-group-text increment-qty rounded-0"
+            data-item_id="{{ item.item_id }}"
+            id="increment-qty_{{ item.item_id }}"
+        >
+            <i class="fa-solid fa-plus fa-xs"></i>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a class="text-info update-link"><small>Update</small></a>
+        </div>
+        <div class="col-6 text-end">
+            <a
+                class="text-danger remove-item"
+                id="remove_{{ item.item_id }}"
+                data-size="{{ item.size }}"
+                ><small>Remove</small></a
+            >
+        </div>
+    </div>
+</form>

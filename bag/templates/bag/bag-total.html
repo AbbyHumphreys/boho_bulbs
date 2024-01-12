@@ -1,0 +1,23 @@
+<h5 class="mb-3 pt-5">
+    <strong>Bag Total: £{{ total|floatformat:2 }}</strong>
+</h5>
+<h5 class="mb-3">Delivery £{{ delivery|floatformat:2 }}</h5>
+<h4>
+    <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
+</h4>
+{% if free_delivery_delta > 0 %}
+    <p class="text-danger small">
+        You could get free delivery by spending just
+        <strong>£{{ free_delivery_delta }}</strong> more!
+    </p>
+{% endif %}
+<a class="btn btn-primary w-100 rounded-0 bg-color-1 border-0" href="{% url 'checkout' %}">
+    <i class="fa-solid fa-lock pe-1"></i>
+    Secure Checkout
+</a>
+<a
+    href="{% url 'products' %}"
+    class="btn btn-primary w-100 rounded-0 bg-color-1 border-0 mt-2">
+    <i class="fa-solid fa-chevron-left"></i> 
+    Keep Shopping
+</a>
