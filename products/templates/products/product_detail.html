@@ -32,9 +32,9 @@
           </small>
         </div>
       {% endif %}
-      <div class="bg-color-1 rounded-0 m-0 p-2 d-inline-flex mb-3">
+      <div class="bg-color-2 txt-color-1 rounded-0 m-0 p-2 d-inline-flex mb-3">
         <p class="m-0"><a href="{% url 'products' %}?iprating={{ product.iprating.name }}"
-            class="product-label">{{ product.iprating | upper }}</a> -
+            class="product-label txt-color-1">{{ product.iprating | upper }}</a> -
           {% if product.iprating|lower == 'ip65' %}
           WATERPROOF LIGHTS
           {% elif product.iprating|lower == 'ip44' %}
@@ -69,7 +69,7 @@
           <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </div>
       </form>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion accordion-flush mt-5" id="accordionFlushExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed ps-2 ms-0" type="button" data-bs-toggle="collapse"
