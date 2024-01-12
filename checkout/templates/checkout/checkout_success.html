@@ -22,8 +22,8 @@
                     <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
                 </div>
             </div>
-            <div class="col-2"></div>
-            <div class="col-4">
+            <div class="d-none d-md-inline col-md-2"></div>
+            <div class="col-12 col-xl-4 ms-3 ms-xl-0">
                 <div class="row">
                     <div class="col-12 col-lg-4">
                         <p><strong>Order Number:</strong></p>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-xl-4 ms-3 ms-xl-0">
                 <div class="row mb-2">
                     <div class="col-12">
                         <h4>Order Details:</h4>
@@ -124,7 +124,7 @@
                 </div>
             {% for item in order.lineitems.all %}
                 <div class="row">
-                    <div class="col-1"></div>
+                    <div class="d-none d-md-inline col-md-1"></div>
                     <div class="col-11 col-lg-7">
                         <p>{{ item.product.lamptitle }}</p>
                     </div>
