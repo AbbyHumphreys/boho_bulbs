@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container-fluid header-container">
+    <div class="container-fluid header-container product-headers">
         <div class="row mb-3 ">
             {% if current_lamptype %}
                 {% for lamptype in current_lamptype %}
@@ -40,7 +40,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-1"></div>
             <div class="col-2 p-0">
@@ -110,7 +110,7 @@
             <div class="col-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% if current_sorting == 'None_None' %}Sort By {% else %} {{ current_sorting_name }}{% endif %}
+                        {% if current_sorting == 'None_None' %}SORT BY{% else %} {{ current_sorting_name }}{% endif %}
                     </button>
                     <ul id="sort-selector" class="dropdown-menu w-100 rounded-0 border border-1 m-0">
                       <li><a class="dropdown-item {% if current_sorting == 'price_asc' %} active {% endif %}" href="{% url 'products' %}?sort=price&direction=asc">Price, low to high</a></li>
