@@ -93,16 +93,15 @@
                     <h1 class="mb-0"><a class="align-middle" href="{% url 'home' %}">Boho Bulbs</a></h1>
                 </div>
                 <div class="col-4 d-none d-lg-block">
-                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}" href="{% url 'view_bag' %}">
+                    <a class="{% if grand_total %}font-weight-bold bg-color-1 txt-color-3{% else %}text-black{% endif %}" href="{% url 'view_bag' %}">
                         <div class="text-end">
-                            <div class="div"><i class="fa-solid fa-basket-shopping"></i></div>
-                            <p class="my-0">
-                                {% if grand_total %}
-                                    £{{ grand_total|floatformat:2 }}
-                                {% else %}
-                                    £0.00
-                                {% endif %}
-                            </p>
+                            <div class="div"><i class="fa-solid fa-basket-shopping {% if grand_total %}txt-color-3{% else %}text-black{% endif %}"></i></div>
+                            {% if grand_total %}
+                                <p class="my-0 txt-color-3">£{{ grand_total|floatformat:2 }}</p>
+                            {% else %}
+                                <p class="my-0">£0.00</p>
+                            {% endif %}
+                            
                         </div>
                     </a>
                 </div>
