@@ -5,7 +5,23 @@ let stripe = Stripe(stripePublicKey);
 
 let elements = stripe.elements({clientSecret});
 
-let card = elements.create('card');
+var style = {
+  base: {
+      color: '#000',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': {
+          color: '#aab7c4'
+      }
+  },
+  invalid: {
+      color: '#dc3545',
+      iconColor: '#dc3545'
+  }
+};
+
+let card = elements.create('card', {style: style});
 
 card.mount('#card-element');
 
