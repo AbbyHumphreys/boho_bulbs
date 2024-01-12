@@ -161,8 +161,3 @@ a.product-label:hover {
     border-color: #dc3545;
     border-radius: 0;
 }
-
-.product-headers {
-    max-height: 514px;
-    overflow: hidden;
-}
