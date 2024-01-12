@@ -2,39 +2,38 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container-fluid header-container product-headers">
-        <div class="row mb-3 ">
+    <div class="container-fluid header-container product-headers h-80">
+        <div class="row p-0">
             {% if current_lamptype %}
                 {% for lamptype in current_lamptype %}
             <!-- 
                 Use of variable in static tag thanks to
                 https://stackoverflow.com/questions/16655851/django-1-5-how-to-use-variables-inside-static-tag 
             -->
-            <div class="col-6 p-0">
+            <div class="col-12 col-md-6 p-0">
                 {% with lamptype.name|add:'_lamps.jpg' as image_path %}
-                    <img src="{{ MEDIA_URL }}{{ image_path }}" class="w-100" alt="{{ lamptype.friendly_name }}">
+                    <img src="{{ MEDIA_URL }}{{ image_path }}" class="w-100 overflow-y-hidden" alt="{{ lamptype.friendly_name }}">
                 {% endwith %}
             </div>
-            <div class="col-6 bg-color-1 d-flex flex-column align-items-center justify-content-center p-0">
-                
-                        <h3 class="text-uppercase pb-1">{{ lamptype.friendly_name }}s</h3>
-                        <p class="ms-5 me-0 ps-5 pe-5">{{ lamptype.description }}</p>
-                    {% endfor %}
-                    
-                {% else %}
-                <div class="col-6 p-0">
-                    <img src="{{ MEDIA_URL }}all_lighting.jpg" class="w-100" alt="lighting">
+            <div class="col-12 col-md-6 bg-color-1 d-flex flex-column align-items-center justify-content-center p-0">
+                <h3 class="text-uppercase pb-1">{{ lamptype.friendly_name }}s</h3>
+                <p class="ms-5 me-0 ps-5 pe-5">{{ lamptype.description }}</p>
             </div>
-            <div class="col-6 bg-color-1 d-flex flex-column align-items-center justify-content-center p-0">
-                    <h3 class="text-uppercase pb-1">All Lighting</h3>
-                        <p class="ms-5 me-5 ps-5 pe-5">
-                            Lighting plays a pivotal role in interior design, often serving as the standout feature that enhances your spaces.
-                            Boho Bulbs' diverse lighting collection includes a variety of types, sizes, and finishes. 
-                            Whether you're seeking traditional designs or contemporary rustic vibes, 
-                            Boho Bulbs ensures there's a lighting solution perfectly tailored to your interior's aesthetic.
-                        </p>
-                {% endif %}
+                {% endfor %}
+            {% else %}
+            <div class="col-12 col-md-6 p-0">
+                <img src="{{ MEDIA_URL }}all_lighting.jpg" class="w-100 overflow-y-hidden" alt="lighting">
             </div>
+            <div class="col-12 col-md-6 bg-color-1 d-md-flex flex-md-column align-items-md-center justify-content-md-center">
+                <h3 class="text-uppercase pb-1 pt-5 ps-5 pe-5">All Lighting</h3>
+                <p class="ms-md-5 me-lg-5 ps-5 pe-5 pb-5">
+                    Lighting plays a pivotal role in interior design, often serving as the standout feature that enhances your spaces.
+                    Boho Bulbs' diverse lighting collection includes a variety of types, sizes, and finishes. 
+                    Whether you're seeking traditional designs or contemporary rustic vibes, 
+                    Boho Bulbs ensures there's a lighting solution perfectly tailored to your interior's aesthetic.
+                </p>
+            </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
@@ -42,10 +41,10 @@
 {% block content %}
     <div class="container-fluid mt-5">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-2 p-0">
+            <div class="col-1 d-none d-md-block"></div>
+            <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
-                    <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0 w-100" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                         TYPE
                     </button>
                     <ul class="dropdown-menu w-100 rounded-0 border border-1 m-0">
@@ -59,7 +58,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-2 p-0">
+            <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
                         COLOURS
@@ -75,7 +74,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-2 p-0">
+            <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
                         IP RATING
@@ -91,7 +90,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-2 p-0">
+            <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
                         BRAND
@@ -107,7 +106,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-2 p-0">
+            <div class="col-12 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
                         {% if current_sorting == 'None_None' %}SORT BY{% else %} {{ current_sorting_name }}{% endif %}
@@ -122,7 +121,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-1"></div>
+            <div class="col-1 d-none d-md-block"></div>
         </div>
         {% if current_colour or current_lamptype or current_brand or current_iprating or current_sorting != 'None_None' %}
         <div class="row mt-3">
