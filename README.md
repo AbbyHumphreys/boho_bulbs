@@ -2,7 +2,7 @@
 
 ![Image showing the Boho Bulbs website on various devices](media/responsive-image.png "Boho Bulbs")
 
-View the deployed site: [Boho Bulbs](https://caravansy-project.herokuapp.com/)
+View the deployed site: [Boho Bulbs](https://boho-bulbs-12038623272a.herokuapp.com/)
 
 This is Boho Bulbs, an ecommerce website for users to buy lamps. The website will enable users to browse the products, add them to a shopping and purchase them, as well as to created their own account to keep track of their purchases.
 

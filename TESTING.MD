@@ -2,7 +2,7 @@
 
 ![Image showing the Boho Bulbs website on various devices](media/responsive-image.png "Boho Bulbs")
 
-View the deployed site: [Boho Bulbs](https://caravansy-project.herokuapp.com/)
+View the deployed site: [Boho Bulbs](https://boho-bulbs-12038623272a.herokuapp.com/)
 
 This is Boho Bulbs, an ecommerce website for users to buy lamps. The website will enable users to browse the products, add them to a shopping and purchase them, as well as to created their own account to keep track of their purchases.
 
@@ -40,3 +40,26 @@ A set of user stories were created before creating the site, so guide the design
 | 21 | Site Visitor | Add a product                             | Add new products as they come in                                    | [Evidence](media/add-product-evidence.png )  |
 | 22 | Site Visitor | Edit a product                            | Update/change product details                                       | [Evidence](media/edit-product-evidence.png )  |
 | 23 | Site Visitor | Delete a product                          | Remove products that are no longer available                        | [Evidence](media/delete-product-evidence.png )  |
+
+# Validation Testing
+
+## [HTML Validation](https://validator.w3.org/nu/)
+
+Using my deployed Heroku App, I ran each url of the website through the HTML validator and corrected the following:
+
+- &copy copyright change to &169
+- orphan element tags were closed off
+
+## [CSS Validation](https://jigsaw.w3.org/css-validator/)
+
+CSS was directly input to the CSS Validator from each static folder in the app and no errors were found.
+
+## [JS Hint](https://jigsaw.w3.org/css-validator/)
+
+JS Hint was used to validate javascript code and the following errors were corrected:
+
+- missing semi-colons were added
+
+
+
+https://pep8ci.herokuapp.com/
