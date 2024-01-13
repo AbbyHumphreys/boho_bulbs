@@ -46,9 +46,8 @@ class ColourAdmin(admin.ModelAdmin):
     )
 
 
-
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Brand, BrandAdmin)
 admin.site.register(Colour, ColourAdmin)
 admin.site.register(IpRating, IpRatingAdmin)
-admin.site.register(LampType,LampTypeAdmin)
+admin.site.register(LampType, LampTypeAdmin)

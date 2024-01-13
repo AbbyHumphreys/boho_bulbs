@@ -7,6 +7,7 @@ from django.db.models.functions import Lower
 from .models import Product, LampType, Colour, Brand, IpRating
 from .forms import ProductForm
 
+
 def all_products(request):
     """ A view to show all products, including sorting and searching """
 
@@ -38,7 +39,7 @@ def all_products(request):
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
-                if direction =='desc':
+                if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
@@ -56,7 +57,7 @@ def all_products(request):
             brand = request.GET['brand'].split(',')
             products = products.filter(brand__name__in=brand)
             brand = Brand.objects.filter(name__in=brand)
-        
+
         if 'iprating' in request.GET:
             iprating = request.GET['iprating'].split(',')
             products = products.filter(iprating__name__in=iprating)
@@ -65,10 +66,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You did not enter any search criteria")
+                messages.error(
+                    request, "You did not enter any search criteria")
                 return redirect(reverse('products'))
-            
-            queries = Q(lamptitle__icontains=query) | Q(description1__icontains=query)
+
+            queries = Q(lamptitle__icontains=query) | Q(
+                description1__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -81,7 +84,7 @@ def all_products(request):
         'brand_asc': 'Brand, A-Z',
         'brand_desc': 'Brand Type, Z-A',
     }
-    
+
     current_sorting_name = ''
     if current_sorting in sorting_name:
         current_sorting_name = sorting_name[current_sorting]
@@ -129,10 +132,13 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.'
+                )
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -156,7 +162,10 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.'
+                )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.lamptitle}')
@@ -176,9 +185,8 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-

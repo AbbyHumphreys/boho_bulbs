@@ -70,18 +70,23 @@ class Product(models.Model):
         verbose_name_plural = 'Products'
 
     lamptitle = models.CharField(max_length=254)
-    brand = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL)
-    colour = models.ForeignKey('Colour', null=True, blank=True, on_delete=models.SET_NULL)
+    brand = models.ForeignKey(
+        'Brand', null=True, blank=True, on_delete=models.SET_NULL)
+    colour = models.ForeignKey(
+        'Colour', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=50, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description1 = models.TextField(max_length=2500, null=True, blank=True)
-    lamptype = models.ForeignKey('LampType', null=True, blank=True, on_delete=models.SET_NULL)
+    lamptype = models.ForeignKey(
+        'LampType', null=True, blank=True, on_delete=models.SET_NULL)
     height = models.IntegerField(null=True, blank=True)
     width = models.IntegerField(null=True, blank=True)
     bulbamount = models.IntegerField(null=True, blank=True)
     wattage = models.IntegerField(null=True, blank=True)
-    bulbtype = models.CharField(max_length=50, null=True, blank=True)
-    iprating = models.ForeignKey('IpRating', null=True, blank=True, on_delete=models.SET_NULL)
+    bulbtype = models.CharField(
+        max_length=50, null=True, blank=True)
+    iprating = models.ForeignKey(
+            'IpRating', null=True, blank=True, on_delete=models.SET_NULL)
     image = models.ImageField(max_length=500, null=True, blank=True)
 
     def __str__(self):
