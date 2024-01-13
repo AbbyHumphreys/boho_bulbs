@@ -6,7 +6,7 @@
         const ourQuantity = document.querySelector(`#id_qty_${itemId}`);
         const currentValue = parseInt(ourQuantity.value);
         const plus = ourQuantity.closest('.input-group').querySelector('.increment-qty');
-        const minus = querySelectorAll('.decrease-qty');
+        const minus = ourQuantity.closest('.input-group').querySelector('.decrement-qty');
         if (currentValue < 2) {
             minus.disabled = true;
         }

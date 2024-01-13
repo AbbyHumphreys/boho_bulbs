@@ -86,7 +86,7 @@ form.addEventListener('submit', function(event) {
             state: form.county.value.trim(),
         }
       }
-    })
+    });
   })
   .then(function(result) {
     if (result.paymentIntent.status === 'succeeded') {
@@ -101,5 +101,5 @@ form.addEventListener('submit', function(event) {
   })
   .catch(function(error) {
     console.error("Error during payment:", error);
-  })
+  });
 });
