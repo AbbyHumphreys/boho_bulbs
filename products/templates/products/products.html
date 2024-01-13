@@ -26,11 +26,9 @@
             </div>
             <div class="col-12 col-md-6 bg-color-1 d-md-flex flex-md-column align-items-md-center justify-content-md-center">
                 <h3 class="text-uppercase pb-1 pt-5 ps-5 pe-5">All Lighting</h3>
-                <p class="ms-md-5 me-lg-5 ps-5 pe-5 pb-5">
+                <p class="ms-lg-5 me-lg-5 ps-5 pe-5 pb-5">
                     Lighting plays a pivotal role in interior design, often serving as the standout feature that enhances your spaces.
                     Boho Bulbs' diverse lighting collection includes a variety of types, sizes, and finishes. 
-                    Whether you're seeking traditional designs or contemporary rustic vibes, 
-                    Boho Bulbs ensures there's a lighting solution perfectly tailored to your interior's aesthetic.
                 </p>
             </div>
             {% endif %}
@@ -209,16 +207,39 @@
                                     {% if request.user.is_superuser %}
                                         <small>
                                             <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            <a class="text-danger" data-bs-toggle="modal" data-bs-target="#prodDelete{{ product.id }}">Delete</a>
                                         </small>
+                                        <!-- Delete Confirmation Modal -->
+                                        <div class="modal fade" id="prodDelete{{ product.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <p class="text-danger mb-2">
+                                                        Are you sure you want to delete this product?
+                                                    </p>
+                                                    <p>This product will be deleted forever if you continue</p>
+                                                    <button type="button" class="btn btn-primary bg-color-1 border-0 mt-1 rounded-0 mb-3 mx-2" data-dismiss="modal">Cancel</button>
+                                                    <!-- Delete link as button  -->
+                                                    <a href="{% url 'delete_product' product.id %}" class="btn btn-danger  mt-1 rounded-0 mb-3 mx-2">Delete</a>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
                                     {% endif %}
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+
+    {% comment %} const myModalAlternative = new bootstrap.Modal('#prodDelete{{ product.id }}', options) {% endcomment %}
+</script>
 {% endblock %}
