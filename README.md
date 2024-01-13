@@ -1,6 +1,6 @@
 # Boho Bulbs
 
-![Image showing the Boho Bulbs website on various devices](# "Boho Bulbs")
+![Image showing the Boho Bulbs website on various devices](media/responsive-image.png "Boho Bulbs")
 
 View the deployed site: [Boho Bulbs](https://caravansy-project.herokuapp.com/)
 
