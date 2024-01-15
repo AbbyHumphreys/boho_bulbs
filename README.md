@@ -21,6 +21,7 @@ As a buyer, I want to:
 - view details of each individual each lamp
 - search for certain charateristics for lamp I desire
 - create my own account to keep track of my purchases
+- review products I like or dislike
 
 ### Site Owner Goals:
 
@@ -28,6 +29,7 @@ As a buyer, I want to:
 - allow users to create an account to store their details and purchases
 - be able to list available products
 - ensure quality listings - through management of products
+- manage reviews - keep them clean and maintain brand image
 
 ### User Requirements and Expectations
 * A simple and intuitive navigation system
@@ -65,9 +67,13 @@ As a buyer, I want to:
 | 19 | Site Visitor | View confirmation of a successful order   | Confirm I ordered correctly                                         |
 | 20 | Site Visitor | Receive a confirmation email              | Confirm I ordered correctly and keep a record of them               |
 | Profile / Product Management |   |   |   |
-| 21 | Site Visitor | Add a product                             | Add new products as they come in                                    |
-| 22 | Site Visitor | Edit a product                            | Update/change product details                                       |
-| 23 | Site Visitor | Delete a product                          | Remove products that are no longer available                        |
+| 21 | Site Owner   | Add a product                             | Add new products as they come in                                    |
+| 22 | Site Owner   | Edit a product                            | Update/change product details                                       |
+| 23 | Site Owner   | Delete a product                          | Remove products that are no longer available                        |
+| Review |   |   |   |
+| 24 | Site Visitor | Add a review                              | Give feedback on my purchases                                       |
+| 25 | Site Owner   | Edit a reveiw                             | Keep reviews suitable for the audience                              |
+| 26 | Site Owner   | Delete a review                           | Remove offensive reviews                                            |
 
 # Design
 
@@ -146,6 +152,10 @@ Once the checkout is submitted, users are redirected to a success page which con
 ## Profile
 
 Crispy forms are once again used here for a clean design. Users can view and update their details including phone, email, address and ensure they are kept for future use.
+
+## Reviews
+
+Reviews were added as a custom model, whereby a user can add a review to a product. A superuse can edit or delete the review if needs be.
 
 ## Other
 
