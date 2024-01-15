@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+        <h1>Reviews</h1>
+        <h4>Review Confirmation</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-12 col-lg-6">
+            <h4>Your Review Was Successful</h4>
+            <p>Here's what you wrote!</p>
+            <p><strong>Product Reviewed:</strong> {{ review.product }}</p>
+            <p><strong>Review Title:</strong> {{ review.title }}</p>
+            <p><strong>Review Contents:</strong> {{ review.content }}</p>
+            <a href="{% url 'products' %}" class="btn btn-primary bg-color-1 rounded-0 border-0 w-100">Keep Shopping</a>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+{% endblock %}
