@@ -11,7 +11,7 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row p-5">
+    <div class="row p-md-5">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
@@ -78,7 +78,7 @@
                         <button class="btn btn-primary w-100 rounded-0 bg-color-1 border-0" type="submit">
                             <i class="fa-solid fa-plus"></i> Add to Bag</button>
                     </div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6 mt-2 mt-lg-0">
                         <a href="{% url 'products' %}" class="btn btn-primary w-100 rounded-0 bg-color-1 border-0">
                             <i class="fa-solid fa-chevron-left"></i> Keep Shopping</a>
                     </div>
