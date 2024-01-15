@@ -161,3 +161,10 @@ a.product-label:hover {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+@media (max-width: 576px) {
+    .custom-toast {
+        width: 100%;
+        max-width: none;
+    }
+}
