@@ -74,6 +74,8 @@ Lighthouse was run to check the quality of the app. Overall the scores were high
 Performance was quite low due to First Contentful Paint. I implemented some of hte suggestions.
 However, there is no noticeable delay in page loading time.
 
+![Lighthouse results](media/lighthouse1.png "Lighthouse Results")
+
 # Bugs
 
 ## Bugs Fixed
