@@ -83,9 +83,10 @@ However, there is no noticeable delay in page loading time.
 | 1 | Button in Success Toast did not match rest of site | Styling applied similar to rest of site |
 | 2 | Web Handler not working | Put in a fetch function |
 | 3 | If no image not handled | Use template logic to show default image |
-| 4 | Product Form Not Working | Fix typost  in field names |
+| 4 | Product Form Not Working | Fix typos in field names |
 | 5 | Error with address 2 | Change reference in checkout_success to address2 instead of address1 |
 | 6 | Error handling disable quantity in bag | Missing correct class name |
+| 7 | Registration email verification not working | Remove duplicate email verification setting |
 
 ## Bugs Outstanding
 

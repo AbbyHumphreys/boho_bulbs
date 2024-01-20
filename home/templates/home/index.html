@@ -12,17 +12,19 @@
 {% block content %}
 <section class="hero-section">
   <div class="container-fluid">
+    <!-- Hero image section -->
     <div class="row hero-row">
       <div class="col position-relative z-0 p-0 m-0">
         <img src="{{ MEDIA_URL }}hero-image.jpg" class="d-none d-lg-block hero-image img-fluid w-100" alt="image of lamps">
         <img src="{{ MEDIA_URL }}hero-image-mobile.jpg" class="d-block d-lg-none hero-image img-fluid w-100" alt="image of lamps">
-
+        <!-- Hero text larger devices -->
         <div class="d-none d-lg-block position-absolute top-0 start-0 z-3 txt-color-1 w-50 text-end pt-5">
           <h5 class="mt-5 ms-5 pt-5 uppercase fs-1">Boho Bulbs</h5>
           <p class="mt-4 ms-5">Lighting plays a crucial role in interior design, serving as the finishing touch that enhances your living spaces and brings them to life. 
             The Boho Bulbs lighting collection provides a wide variety of lighting options in terms of types, sizes, and finishes, encompassing both contemporary and vintage styles. 
             This ensures that you can discover the perfect fixture to complement your space.</p>
         </div>
+        <!-- Hero text smaller devices -->
         <div class="d-block d-lg-none txt-color-2 pt-2 pb-2">
           <h5 class="ms-5 pt-5 uppercase fs-1">Boho Bulbs</h5>
           <p class="mt-4 ms-5">Lighting plays a crucial role in interior design, serving as the finishing touch that enhances your living spaces and brings them to life. 

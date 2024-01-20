@@ -34,6 +34,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ Handle checkout """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -53,6 +54,7 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
 
+        # save order if form is valid
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -77,6 +79,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
+            # save users profile information
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse(
                 'checkout_success', args=[order.order_number]))
@@ -99,6 +102,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
+        # prefill form if user is logged in
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

@@ -1,3 +1,5 @@
+// Logic to style country field
+
 let countrySelected = document.getElementById('id_default_country').value;
 if(!countrySelected) {
     document.getElementById('id_default_country').style.color = '#aab7c4';

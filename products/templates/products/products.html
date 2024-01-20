@@ -38,8 +38,10 @@
 
 {% block content %}
     <div class="container-fluid mt-5">
+        <!-- Secondary product filter -->
         <div class="row">
             <div class="col-1 d-none d-md-block"></div>
+            <!-- Type filter -->
             <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0 w-100" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
@@ -56,6 +58,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- Colour filter -->
             <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,6 +75,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- IP Rating filter -->
             <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,6 +92,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- Brand filter -->
             <div class="col-12 col-sm-6 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 border-end-0 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,6 +109,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- Sort By filter -->
             <div class="col-12 col-md-2 p-0">
                 <div class="btn-group d-flex mb-0 pb-0">
                     <button type="button" class="btn dropdown-toggle border border-1 rounded-0 pt-3 pb-3 mb-0" data-bs-toggle="dropdown" aria-expanded="false">
@@ -126,6 +132,7 @@
             <div class="col-1"></div>
             <div class="col-10">
                 <div class="row">
+                    <!-- Displays filters -->
                     <div class="col-6 ps-0 ms-0">
                         <p class="d-inline"><strong>Filtered By: </strong></p>
                         {% for colour in current_colour %}
@@ -148,6 +155,7 @@
                         <span class="badge bg-color-1 txt-color-2">{{ current_sorting_name }}</span>
                         {% endif %}
                     </div>
+                    <!-- Clear filters -->
                     <div class="col-6 text-end pe-0 me-0">
                         {% if search_term or current_brand or current_colour or current_iprating or current_lamptype or current_sorting != 'None_None' %}
                             <span><a href="{% url 'products' %}">CLEAR FILTERS</a></span>
@@ -161,6 +169,7 @@
         {% if search_term %}
         <div class="row mt-3">
             <div class="col-1"></div>
+            <!-- Displays count of products found -->
             <div class="col-10 ps-0 ms-0">
                 {{ products | length }} Products found for {{ search_term | upper }}
             </div>
@@ -168,6 +177,7 @@
         </div>
         {% endif %}
         <div class="row p-md-5">
+            <!-- Displays each product in a card -->
             {% for product in products %}
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="card border-0 h-100 d-flex align-items-stretch">
@@ -177,6 +187,7 @@
                                     <img src="{{ product.image.url }}" class="card-img-top image-card"
                                     alt="product.lamptitle">
                                 {% else %}
+                                    <!-- Default image if none available -->
                                     <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top image-card"
                                     alt="product.lamptitle">
                                 {% endif %}

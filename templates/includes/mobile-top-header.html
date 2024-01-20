@@ -6,6 +6,7 @@
               <p class="my-0">Search</p>
           </div>
       </a>
+       <!-- Search Form -->
       <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
           <form class="form" method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
@@ -21,6 +22,7 @@
           </form>
       </div>
   </li>
+   <!-- Profile / Login section -->
   <li class="list-inline-item dropdown">
       <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
@@ -45,6 +47,7 @@
           {% endif %}
       </div>
   </li>
+   <!-- Bag total display section -->
   <li class="list-inline-item">
       <a class="{% if grand_total %}txt-color-3 font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
           <div class="text-center">

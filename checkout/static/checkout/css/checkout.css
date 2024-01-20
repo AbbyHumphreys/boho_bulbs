@@ -1,8 +1,4 @@
-.fieldset-label {
-    font-size: 1.5rem;
-}
-
-/* Styling for Stripe */
+/*----------------------------------------------------- Stripe Styles */
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -33,6 +29,7 @@
 .fieldset-label {
     position: relative;
     right: .5rem;
+    font-size: 1.5rem;
 }
 
 #payment-form .form-control,

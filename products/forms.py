@@ -4,7 +4,7 @@ from .models import Product, LampType, Colour, Brand, IpRating
 
 
 class ProductForm(forms.ModelForm):
-
+    """ Product form model """
     class Meta:
         model = Product
         fields = '__all__'

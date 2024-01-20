@@ -1,3 +1,4 @@
+<!-- Quanity form include for bag screen -->
 <form
     class="form quantity_form"
     method="POST"
@@ -5,6 +6,7 @@
 >
     {% csrf_token %}
     <div class="input-group input-group-sm">
+        <!-- Decrease Quantity Button -->
         <button
             class="input-group-text decrease-qty decrement-qty rounded-0"
             data-item_id="{{ item.item_id }}"
@@ -12,6 +14,7 @@
         >
             <i class="fa-solid fa-minus fa-xs"></i>
         </button>
+        <!-- Quantity Input -->
         <input
             type="number"
             class="form-control form-control-sm qty_input rounded-0"
@@ -22,6 +25,7 @@
             data-item_id="{{ item.item_id }}"
             id="id_qty_{{ item.item_id }}"
         />
+        <!-- Increase Quantity Button -->
         <button
             class="input-group-text increase-qty increment-qty rounded-0"
             data-item_id="{{ item.item_id }}"
@@ -31,9 +35,11 @@
         </button>
     </div>
     <div class="row">
+        <!-- Update item link -->
         <div class="col-6">
             <a class="text-info update-link"><small>Update</small></a>
         </div>
+        <!-- Remove Item link -->
         <div class="col-6 text-end">
             <a
                 class="text-danger remove-item"

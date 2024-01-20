@@ -20,6 +20,7 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col-12 col-lg-6">
+                <!-- Form to add new product-->
                 <form class="mt-3" action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -38,6 +39,7 @@
     </div>
 {% endblock %}
 
+<!-- Javascript to handle new image -->
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">

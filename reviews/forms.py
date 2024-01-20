@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class ReviewForm(forms.ModelForm):
-    """ Create form based on Review model """
+    """ Review form format """
 
     class Meta:
         model = Review

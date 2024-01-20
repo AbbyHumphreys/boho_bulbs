@@ -37,10 +37,14 @@ card.addEventListener('change', function(event) {
 
 let form = document.getElementById('payment-form');
 
+// Handle form submit event
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   card.update({ 'disabled': true});
   document.getElementById('submit-button').disabled = true;
+
+  toggleFade(document.getElementById('payment-form'));
+  toggleFade(document.getElementById('loading-overlay'));
 
   let csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
   let saveInfo = document.getElementById('id-save-info').checked;
@@ -103,3 +107,16 @@ form.addEventListener('submit', function(event) {
     console.error("Error during payment:", error);
   });
 });
+
+// Overlay toggle
+function toggleFade(element) {
+  if (window.getComputedStyle(element).display === "none") {
+      element.style.display = "block";
+      // Fix: Ensure the element is rendered before changing opacity
+      setTimeout(() => { element.style.opacity = 1; }, 10);
+  } else {
+      element.style.opacity = 0;
+      // Wait for the transition to finish before hiding the element
+      setTimeout(() => { element.style.display = "none"; }, 1000);
+  }
+}

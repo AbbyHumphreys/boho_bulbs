@@ -2,7 +2,7 @@ from django.db import models
 
 
 class LampType(models.Model):
-
+    """ Lamptype model """
     class Meta:
         verbose_name_plural = 'Lamp types'
 
@@ -18,7 +18,7 @@ class LampType(models.Model):
 
 
 class IpRating(models.Model):
-
+    """ Product ip rating model """
     class Meta:
         verbose_name_plural = 'IP ratings'
 
@@ -34,7 +34,7 @@ class IpRating(models.Model):
 
 
 class Colour(models.Model):
-
+    """ Product Colour model """
     class Meta:
         verbose_name_plural = 'Colours'
 
@@ -49,7 +49,7 @@ class Colour(models.Model):
 
 
 class Brand(models.Model):
-
+    """ Brand model """
     class Meta:
         verbose_name_plural = 'Brands'
 
@@ -65,7 +65,7 @@ class Brand(models.Model):
 
 
 class Product(models.Model):
-
+    """ Product model """
     class Meta:
         verbose_name_plural = 'Products'
 

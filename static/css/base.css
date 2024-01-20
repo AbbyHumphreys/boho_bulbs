@@ -32,32 +32,24 @@ h6 {
     background-color: #000;
 }
 
-.toast {
-    background-color: rgb(255, 255, 255);
-}
-
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
-.message-container {
-    position: fixed;
-    top: 110px;
-    right: 30px;
-    z-index: 999999999999999;
-}
-
-.custom-toast {
-    overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
-}
-
 strong {
     font-weight: 700;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+a {
+    color: #000
+}
+
+a:hover {
+    color: #8f967d;
 }
 
 /*----------------------------------------------------- Colors */
@@ -96,21 +88,7 @@ strong {
     font-size: 0.9rem;
 }
 
-.vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-a {
-    color: #000
-}
-
-a:hover {
-    color: #8f967d;
-}
+/*----------------------------------------------------- Product Section */
 
 a.product-label:hover {
     color: #fff;
@@ -136,6 +114,10 @@ a.product-label:hover {
     outline: #8f967d auto 1px;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
 
 /*----------------------------------------------------- Product Form Section */
 
@@ -153,7 +135,6 @@ a.product-label:hover {
     min-height: 100%;
     opacity: 0;
     cursor: pointer;
-    
 }
 
 .custom-checkbox .custom-control-label::before {
@@ -166,6 +147,28 @@ a.product-label:hover {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/*----------------------------------------------------- Toasts */
+.toast {
+    background-color: rgb(255, 255, 255);
+}
+
+.message-container {
+    position: fixed;
+    top: 110px;
+    right: 30px;
+    z-index: 999999999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/*----------------------------------------------------- Media Queries */
 
 @media (max-width: 576px) {
     .custom-toast {
