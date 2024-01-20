@@ -60,6 +60,36 @@ JS Hint was used to validate javascript code and the following errors were corre
 
 - missing semi-colons were added
 
+## [Python Validator](https://pep8ci.herokuapp.com/)
 
+Pep8 CI was used to validate python code and the following errors were corrected:
 
-https://pep8ci.herokuapp.com/
+- lines too long
+- need new lines at end of file
+- blank lines contains whitespace
+
+## [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+
+Lighthouse was run to check the quality of the app. Overall the scores were high. 
+Performance was quite low due to First Contentful Paint. I implemented some of hte suggestions.
+However, there is no noticeable delay in page loading time.
+
+# Bugs
+
+## Bugs Fixed
+
+| | Bug | Solution |
+|----|----|----|
+| 1 | Button in Success Toast did not match rest of site | Styling applied similar to rest of site |
+| 2 | Web Handler not working | Put in a fetch function |
+| 3 | If no image not handled | Use template logic to show default image |
+| 4 | Product Form Not Working | Fix typost  in field names |
+| 5 | Error with address 2 | Change reference in checkout_success to address2 instead of address1 |
+| 6 | Error handling disable quantity in bag | Missing correct class name |
+
+## Bugs Outstanding
+
+| | Bug | Why Outstanding |
+|----|----|----|
+| 1 | Order of Brands in secondary search bar. Currently it's not in alphabetical order | Ran out of time, but will fix in the future by applying a sort |
+| 2 | Responsive oddities - e.g. Product page hero image/text can look slightly off at some medium devices | Add bootstrap md classes to fix responsiveness |
