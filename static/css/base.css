@@ -116,6 +116,11 @@ a.product-label:hover {
     color: #fff;
 }
 
+.btn:hover {
+    color: #8f967d;
+    background-color: #000;
+}
+
 .accordion-button:not(.collapsed) {
     color: black;
     background-color: #8f967d;
