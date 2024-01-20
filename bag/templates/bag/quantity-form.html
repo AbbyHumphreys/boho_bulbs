@@ -6,7 +6,7 @@
     {% csrf_token %}
     <div class="input-group input-group-sm">
         <button
-            class="input-group-text decrease-qty rounded-0"
+            class="input-group-text decrease-qty decrement-qty rounded-0"
             data-item_id="{{ item.item_id }}"
             id="decrement-qty_{{ item.item_id }}"
         >
@@ -23,7 +23,7 @@
             id="id_qty_{{ item.item_id }}"
         />
         <button
-            class="input-group-text increment-qty rounded-0"
+            class="input-group-text increase-qty increment-qty rounded-0"
             data-item_id="{{ item.item_id }}"
             id="increment-qty_{{ item.item_id }}"
         >
