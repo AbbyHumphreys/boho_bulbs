@@ -96,3 +96,4 @@ However, there is no noticeable delay in page loading time.
 |----|----|----|
 | 1 | Order of Brands in secondary search bar. Currently it's not in alphabetical order | Ran out of time, but will fix in the future by applying a sort |
 | 2 | Responsive oddities - e.g. Product page hero image/text can look slightly off at some medium devices | Add bootstrap md classes to fix responsiveness |
+| 3 | If user doesn't complete stripe element correctly, the loading overlay is displayed and the user can't proceed with payment | I tried disabling the button, but the stripe element only disabled the button if you click out the element before clicking 'Pay Now', therefore the site owner is determined to research stripe docs and implement as solution post submission |
